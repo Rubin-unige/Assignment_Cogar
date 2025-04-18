@@ -1,4 +1,4 @@
-prefix=/home/abulanti/assign/install
+prefix=/home/rubin/Assignment_Cogar/install
 
 Name: assignments
 Description: Description of assignments

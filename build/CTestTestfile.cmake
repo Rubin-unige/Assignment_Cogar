@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/abulanti/assign/src
-# Build directory: /home/abulanti/assign/build
+# Source directory: /home/rubin/Assignment_Cogar/src
+# Build directory: /home/rubin/Assignment_Cogar/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

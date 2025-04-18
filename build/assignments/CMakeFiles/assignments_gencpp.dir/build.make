@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abulanti/assign/src
+CMAKE_SOURCE_DIR = /home/rubin/Assignment_Cogar/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abulanti/assign/build
+CMAKE_BINARY_DIR = /home/rubin/Assignment_Cogar/build
 
 # Utility rule file for assignments_gencpp.
 
@@ -63,10 +63,10 @@ assignments/CMakeFiles/assignments_gencpp.dir/build: assignments_gencpp
 .PHONY : assignments/CMakeFiles/assignments_gencpp.dir/build
 
 assignments/CMakeFiles/assignments_gencpp.dir/clean:
-	cd /home/abulanti/assign/build/assignments && $(CMAKE_COMMAND) -P CMakeFiles/assignments_gencpp.dir/cmake_clean.cmake
+	cd /home/rubin/Assignment_Cogar/build/assignments && $(CMAKE_COMMAND) -P CMakeFiles/assignments_gencpp.dir/cmake_clean.cmake
 .PHONY : assignments/CMakeFiles/assignments_gencpp.dir/clean
 
 assignments/CMakeFiles/assignments_gencpp.dir/depend:
-	cd /home/abulanti/assign/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abulanti/assign/src /home/abulanti/assign/src/assignments /home/abulanti/assign/build /home/abulanti/assign/build/assignments /home/abulanti/assign/build/assignments/CMakeFiles/assignments_gencpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rubin/Assignment_Cogar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rubin/Assignment_Cogar/src /home/rubin/Assignment_Cogar/src/assignments /home/rubin/Assignment_Cogar/build /home/rubin/Assignment_Cogar/build/assignments /home/rubin/Assignment_Cogar/build/assignments/CMakeFiles/assignments_gencpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : assignments/CMakeFiles/assignments_gencpp.dir/depend
 

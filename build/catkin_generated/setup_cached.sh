@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/abulanti/assign/build'
+export CMAKE_PREFIX_PATH="/home/rubin/Assignment_Cogar/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/rubin/Assignment_Cogar/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/rubin/Assignment_Cogar/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/rubin/Assignment_Cogar/src:$ROS_PACKAGE_PATH"

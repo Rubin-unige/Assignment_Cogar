@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/abulanti/assign/src/assignments/srv/CheckJointState.srv;/home/abulanti/assign/src/assignments/srv/Speaker.srv"
+services_str = "/home/rubin/Assignment_Cogar/src/assignments/srv/CheckJointState.srv;/home/rubin/Assignment_Cogar/src/assignments/srv/Speaker.srv"
 pkg_name = "assignments"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

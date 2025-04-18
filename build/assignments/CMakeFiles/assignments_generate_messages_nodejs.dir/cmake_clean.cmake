@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/abulanti/assign/devel/share/gennodejs/ros/assignments/srv/CheckJointState.js"
-  "/home/abulanti/assign/devel/share/gennodejs/ros/assignments/srv/Speaker.js"
+  "/home/rubin/Assignment_Cogar/devel/share/gennodejs/ros/assignments/srv/CheckJointState.js"
+  "/home/rubin/Assignment_Cogar/devel/share/gennodejs/ros/assignments/srv/Speaker.js"
   "CMakeFiles/assignments_generate_messages_nodejs"
 )
 

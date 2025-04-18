@@ -43,39 +43,39 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abulanti/assign/src
+CMAKE_SOURCE_DIR = /home/rubin/Assignment_Cogar/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abulanti/assign/build
+CMAKE_BINARY_DIR = /home/rubin/Assignment_Cogar/build
 
 # Utility rule file for assignments_generate_messages_eus.
 
 # Include the progress variables for this target.
 include assignments/CMakeFiles/assignments_generate_messages_eus.dir/progress.make
 
-assignments/CMakeFiles/assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/srv/CheckJointState.l
-assignments/CMakeFiles/assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/srv/Speaker.l
-assignments/CMakeFiles/assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/manifest.l
+assignments/CMakeFiles/assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/CheckJointState.l
+assignments/CMakeFiles/assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/Speaker.l
+assignments/CMakeFiles/assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/manifest.l
 
 
-/home/abulanti/assign/devel/share/roseus/ros/assignments/srv/CheckJointState.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/abulanti/assign/devel/share/roseus/ros/assignments/srv/CheckJointState.l: /home/abulanti/assign/src/assignments/srv/CheckJointState.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/abulanti/assign/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from assignments/CheckJointState.srv"
-	cd /home/abulanti/assign/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/abulanti/assign/src/assignments/srv/CheckJointState.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p assignments -o /home/abulanti/assign/devel/share/roseus/ros/assignments/srv
+/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/CheckJointState.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/CheckJointState.l: /home/rubin/Assignment_Cogar/src/assignments/srv/CheckJointState.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rubin/Assignment_Cogar/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from assignments/CheckJointState.srv"
+	cd /home/rubin/Assignment_Cogar/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/rubin/Assignment_Cogar/src/assignments/srv/CheckJointState.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p assignments -o /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv
 
-/home/abulanti/assign/devel/share/roseus/ros/assignments/srv/Speaker.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/abulanti/assign/devel/share/roseus/ros/assignments/srv/Speaker.l: /home/abulanti/assign/src/assignments/srv/Speaker.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/abulanti/assign/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from assignments/Speaker.srv"
-	cd /home/abulanti/assign/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/abulanti/assign/src/assignments/srv/Speaker.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p assignments -o /home/abulanti/assign/devel/share/roseus/ros/assignments/srv
+/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/Speaker.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/Speaker.l: /home/rubin/Assignment_Cogar/src/assignments/srv/Speaker.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rubin/Assignment_Cogar/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from assignments/Speaker.srv"
+	cd /home/rubin/Assignment_Cogar/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/rubin/Assignment_Cogar/src/assignments/srv/Speaker.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p assignments -o /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv
 
-/home/abulanti/assign/devel/share/roseus/ros/assignments/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/abulanti/assign/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for assignments"
-	cd /home/abulanti/assign/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/abulanti/assign/devel/share/roseus/ros/assignments assignments std_msgs
+/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rubin/Assignment_Cogar/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for assignments"
+	cd /home/rubin/Assignment_Cogar/build/assignments && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments assignments std_msgs
 
 assignments_generate_messages_eus: assignments/CMakeFiles/assignments_generate_messages_eus
-assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/srv/CheckJointState.l
-assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/srv/Speaker.l
-assignments_generate_messages_eus: /home/abulanti/assign/devel/share/roseus/ros/assignments/manifest.l
+assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/CheckJointState.l
+assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/srv/Speaker.l
+assignments_generate_messages_eus: /home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments/manifest.l
 assignments_generate_messages_eus: assignments/CMakeFiles/assignments_generate_messages_eus.dir/build.make
 
 .PHONY : assignments_generate_messages_eus
@@ -86,10 +86,10 @@ assignments/CMakeFiles/assignments_generate_messages_eus.dir/build: assignments_
 .PHONY : assignments/CMakeFiles/assignments_generate_messages_eus.dir/build
 
 assignments/CMakeFiles/assignments_generate_messages_eus.dir/clean:
-	cd /home/abulanti/assign/build/assignments && $(CMAKE_COMMAND) -P CMakeFiles/assignments_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/rubin/Assignment_Cogar/build/assignments && $(CMAKE_COMMAND) -P CMakeFiles/assignments_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : assignments/CMakeFiles/assignments_generate_messages_eus.dir/clean
 
 assignments/CMakeFiles/assignments_generate_messages_eus.dir/depend:
-	cd /home/abulanti/assign/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abulanti/assign/src /home/abulanti/assign/src/assignments /home/abulanti/assign/build /home/abulanti/assign/build/assignments /home/abulanti/assign/build/assignments/CMakeFiles/assignments_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rubin/Assignment_Cogar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rubin/Assignment_Cogar/src /home/rubin/Assignment_Cogar/src/assignments /home/rubin/Assignment_Cogar/build /home/rubin/Assignment_Cogar/build/assignments /home/rubin/Assignment_Cogar/build/assignments/CMakeFiles/assignments_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : assignments/CMakeFiles/assignments_generate_messages_eus.dir/depend
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/abulanti/assign/src/assignments
+# Install script for directory: /home/rubin/Assignment_Cogar/src/assignments
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/abulanti/assign/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rubin/Assignment_Cogar/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,55 +39,55 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/srv" TYPE FILE FILES
-    "/home/abulanti/assign/src/assignments/srv/CheckJointState.srv"
-    "/home/abulanti/assign/src/assignments/srv/Speaker.srv"
+    "/home/rubin/Assignment_Cogar/src/assignments/srv/CheckJointState.srv"
+    "/home/rubin/Assignment_Cogar/src/assignments/srv/Speaker.srv"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/cmake" TYPE FILE FILES "/home/abulanti/assign/build/assignments/catkin_generated/installspace/assignments-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/cmake" TYPE FILE FILES "/home/rubin/Assignment_Cogar/build/assignments/catkin_generated/installspace/assignments-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/abulanti/assign/devel/include/assignments")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/rubin/Assignment_Cogar/devel/include/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/abulanti/assign/devel/share/roseus/ros/assignments")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/rubin/Assignment_Cogar/devel/share/roseus/ros/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/abulanti/assign/devel/share/common-lisp/ros/assignments")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/rubin/Assignment_Cogar/devel/share/common-lisp/ros/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/abulanti/assign/devel/share/gennodejs/ros/assignments")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/rubin/Assignment_Cogar/devel/share/gennodejs/ros/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/abulanti/assign/devel/lib/python3/dist-packages/assignments")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/rubin/Assignment_Cogar/devel/lib/python3/dist-packages/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/abulanti/assign/devel/lib/python3/dist-packages/assignments")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/rubin/Assignment_Cogar/devel/lib/python3/dist-packages/assignments")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/abulanti/assign/build/assignments/catkin_generated/installspace/assignments.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rubin/Assignment_Cogar/build/assignments/catkin_generated/installspace/assignments.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/cmake" TYPE FILE FILES "/home/abulanti/assign/build/assignments/catkin_generated/installspace/assignments-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/cmake" TYPE FILE FILES "/home/rubin/Assignment_Cogar/build/assignments/catkin_generated/installspace/assignments-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments/cmake" TYPE FILE FILES
-    "/home/abulanti/assign/build/assignments/catkin_generated/installspace/assignmentsConfig.cmake"
-    "/home/abulanti/assign/build/assignments/catkin_generated/installspace/assignmentsConfig-version.cmake"
+    "/home/rubin/Assignment_Cogar/build/assignments/catkin_generated/installspace/assignmentsConfig.cmake"
+    "/home/rubin/Assignment_Cogar/build/assignments/catkin_generated/installspace/assignmentsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments" TYPE FILE FILES "/home/abulanti/assign/src/assignments/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignments" TYPE FILE FILES "/home/rubin/Assignment_Cogar/src/assignments/package.xml")
 endif()
 
