@@ -6,14 +6,15 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Cogar_Assignments'
-copyright = '2025, ABulanti'
-author = 'ABulanti'
+project = 'Cogar Assignment'
+copyright = '2025, Sarvenaz Ashoori | Rubin Khadka Chhetri'
+author = 'Sarvenaz Ashoori | Rubin Khadka Chhetri'
+release = '1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx.ext.autodoc']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -25,13 +26,3 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-
-html_show_sourcelink = False
-
-html_context = {
-    "display_github": True,
-    "github_user": "AleBulanti",
-    "github_repo": "Assignment_Cogar",
-    "github_version": "main",
-    "conf_py_path": "/docs/source/",
-}
