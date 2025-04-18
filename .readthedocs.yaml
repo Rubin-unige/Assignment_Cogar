@@ -12,11 +12,7 @@ build:
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
-<<<<<<< HEAD
    configuration: docs/source/conf.py
-=======
-   configuration: src/assignment_cogar/docs/source/conf.py
->>>>>>> 94e9caac9a476ba4b6a53998730ab321f84664db
 
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
