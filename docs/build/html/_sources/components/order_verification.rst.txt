@@ -1,0 +1,35 @@
+Order Verification System
+=========================
+
+The `OrderVerificationSystem` consists of three key components: **AnnounceOrder**, **ListenToCustomer**, and **DecisionHandler**. Each component has specific roles, and their interactions are essential to the overall functioning of the system.
+
+.. image:: ../static/architecture_diagram.png
+   :alt: Architecture Component Diagram
+   :align: center
+
+**Component Descriptions:**
+-----------------------------
+
+1. **AnnounceOrder** (Service Component):
+   - **Role**: Announces the order to the customer.
+   - **Interface**:
+     - **Service Interface**: `/speaker`
+     - **Service Request**: `SpeakerRequest`
+     - **Service Response**: `SpeakerResponse`
+     - **Interface Type**: Stateless, Service-based, Strongly-typed.
+
+2. **ListenToCustomer** (Service Component):
+   - **Role**: Listens for the customer's response via the microphone.
+   - **Interface**:
+     - **Service Interface**: `/microphone`
+     - **Service Request**: `MicrophoneRequest`
+     - **Service Response**: `MicrophoneResponse`
+     - **Interface Type**: Stateless, Service-based, Strongly-typed.
+
+3. **DecisionHandler** (Stateful Component):
+   - **Role**: Handles decision-making based on the customer's response and manages retries.
+   - **Interface**:
+     - **Service Interface**: `/speaker` (for announcements)
+     - **Service Interface**: `/microphone` (for capturing responses)
+     - **Topic Interface**: `/order_status` (for publishing order status)
+     - **Interface Type**: Stateful, Service-based, Topic-based, Strongly-typed.

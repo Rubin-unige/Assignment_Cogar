@@ -1,0 +1,13 @@
+<launch>
+    <!-- Shared services -->
+    <node pkg="assignments" type="arm_motion_service.py" name="arm_motion_service" output="screen" />
+
+    <node pkg="assignment_cogar" type="visual_perception_node.py" name="visual_perception" output="screen" />
+
+    <!-- Launch 5 robots' food placer nodes -->
+    <node pkg="assignment_cogar" type="food_placer.py" name="robot1_food_placer" args="robot1" output="screen" />
+    <node pkg="assignment_cogar" type="food_placer.py" name="robot2_food_placer" args="robot2" output="screen" />
+    <node pkg="assignment_cogar" type="food_placer.py" name="robot3_food_placer" args="robot3" output="screen" />
+    <node pkg="assignment_cogar" type="food_placer.py" name="robot4_food_placer" args="robot4" output="screen" />
+    <node pkg="assignment_cogar" type="food_placer.py" name="robot5_food_placer" args="robot5" output="screen" />
+</launch>

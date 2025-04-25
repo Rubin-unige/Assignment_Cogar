@@ -1,0 +1,10 @@
+<launch>
+  <!-- Start the microphone service -->
+  <node pkg="assignment_cogar" type="microphone_service.py" name="microphone_service" output="screen" />
+
+  <!-- Start the speaker service -->
+  <node pkg="assignments" type="speaker_service.py" name="speaker_service" output="screen" />
+
+  <!-- Start the order verification system -->
+  <node pkg="assignment_cogar" type="order_verification_system.py" name="order_verification_system" output="screen" />
+</launch>

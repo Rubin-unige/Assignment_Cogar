@@ -7,8 +7,9 @@ COGAR Documentation
 ===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
+   order_verification
 
 Indices and tables
 ==================

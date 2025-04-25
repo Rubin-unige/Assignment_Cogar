@@ -1,0 +1,98 @@
+Order Verification System
+=========================
+
+The **OrderVerificationSystem** is a critical subsystem that verifies customer orders using a series of steps involving communication with various services like the speaker and microphone. It consists of three key components: **AnnounceOrder**, **ListenToCustomer**, and **DecisionHandler**. Each component has a specific role, and their interaction ensures seamless verification of the customer's order.
+
+.. image:: ../static/architecture_diagram.png  
+   :alt: Architecture Component Diagram  
+   :align: center
+
+AnnounceOrder Component
+-----------------------
+
+The **AnnounceOrder** component is responsible for announcing the order to the customer for confirmation.
+
+**Interface**:
+- **Input**: A `SpeakerRequest` message containing the dish name to be announced.
+- **Output**: A `SpeakerResponse` message indicating whether the announcement was successful.
+
+**Communication Mechanism**:
+- **Service Interface**: The component interacts with the `/speaker` service to communicate the order.
+   - **Service**: `/speaker`
+   - **Service Type**: `Speaker` (Request: `SpeakerRequest`, Response: `SpeakerResponse`)
+
+**Interface Type**:
+- **Stateless**: It does not retain state between requests; each interaction is independent.
+- **Service-based**: Communicates with the speaker service to generate a spoken announcement.
+- **Strongly-typed**: The communication is based on well-defined ROS message types (`SpeakerRequest` and `SpeakerResponse`).
+
+**Role in Architecture**:
+- The **AnnounceOrder** component plays a crucial role in confirming the order with the customer by vocalizing the dish name and asking for confirmation. It relies on the `/speaker` service to provide the necessary feedback.
+
+ListenToCustomer Component
+--------------------------
+
+The **ListenToCustomer** component captures the customer's verbal response to verify if the order is correct.
+
+**Interface**:
+- **Input**: The component listens for the customer's response through the microphone.
+- **Output**: A `String` message containing the customer's response, such as "yes", "no", or "correct".
+
+**Communication Mechanism**:
+- **Service Interface**: The component interacts with the `/microphone` service to capture the customer's verbal feedback.
+   - **Service**: `/microphone`
+   - **Service Type**: `Microphone` (Request: `MicrophoneRequest`, Response: `MicrophoneResponse`)
+
+**Interface Type**:
+- **Stateless**: This component is stateless and performs its task of capturing a response without maintaining any internal state.
+- **Service-based**: It uses a service-based communication model to obtain customer feedback.
+- **Strongly-typed**: It works with the predefined ROS message type (`MicrophoneResponse`), which returns a string response.
+
+**Role in Architecture**:
+- The **ListenToCustomer** component ensures that the customer's response is captured accurately for verification. It relies on the `/microphone` service to gather this feedback and enable order verification.
+
+DecisionHandler Component
+-------------------------
+
+The **DecisionHandler** component evaluates the customer's response and determines the appropriate order verification status. It manages retry logic in case of invalid or ambiguous responses.
+
+**Interface**:
+- **Input**: Receives the `dish_name`, `response`, and `robot_id` to assess the customer’s confirmation and make a final decision.
+- **Output**: Publishes the verification result to the `/order_status` topic, indicating whether the order is confirmed, rejected, or requires attention.
+
+**Communication Mechanism**:
+- **Topic Interface**: The component publishes the order status to the `/order_status` topic for external systems to track.
+   - **Topic**: `/order_status`
+   - **Message Type**: `OrderStatus`
+
+**Interface Type**:
+- **Stateful**: It maintains internal state, such as the retry count, order verification status, and decision outcomes.
+- **Topic-based**: Publishes results to the `/order_status` topic, allowing other components to monitor the order status.
+- **Strongly-typed**: Interacts with predefined ROS message types (`OrderStatus`), ensuring consistent communication.
+
+**Role in Architecture**:
+- The **DecisionHandler** component evaluates the customer's response to determine the correctness of the order. It handles retries and ensures that orders are processed correctly. It communicates the final status of the order through the `/order_status` topic, without direct interaction with the microphone or speaker services.
+
+Summary of Component Interfaces
+-------------------------------
+
+.. list-table:: Summary of Component Interfaces
+   :widths: 25 25 30 20
+   :header-rows: 1
+
+   * - **Component**
+     - **Interface Type**
+     - **Communication Mechanism**
+     - **Message Types**
+   * - AnnounceOrder
+     - Stateless, Service-based
+     - Communicates with the `/speaker` service
+     - `SpeakerRequest`, `SpeakerResponse`
+   * - ListenToCustomer
+     - Stateless, Service-based
+     - Communicates with the `/microphone` service
+     - `MicrophoneRequest`, `MicrophoneResponse`
+   * - DecisionHandler
+     - Stateful, Topic-based
+     - Publishes to the `/order_status` topic
+     - `OrderStatus`

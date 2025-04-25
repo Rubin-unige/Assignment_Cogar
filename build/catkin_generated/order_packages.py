@@ -2,4 +2,4 @@
 source_root_dir = '/home/rubin/Assignment_Cogar/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/rubin/cogar_ws/devel;/home/rubin/ros_ws/devel;/opt/ros/noetic'.split(';') if '/home/rubin/cogar_ws/devel;/home/rubin/ros_ws/devel;/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/rubin/Assignment_Cogar/devel;/home/rubin/cogar_ws/devel;/home/rubin/ros_ws/devel;/opt/ros/noetic'.split(';') if '/home/rubin/Assignment_Cogar/devel;/home/rubin/cogar_ws/devel;/home/rubin/ros_ws/devel;/opt/ros/noetic' != '' else []

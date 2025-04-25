@@ -1,0 +1,6 @@
+string status
+bool has_empty_plate
+string robot_id
+---
+bool success
+string message

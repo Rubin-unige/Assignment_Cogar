@@ -1,0 +1,6 @@
+<launch>  
+    <!-- Main Orchestrator -->
+    <node 
+        name="orchestrator" pkg="assignment_cogar" type="orchestrator_system.py" output="screen">
+    </node>
+</launch>

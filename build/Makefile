@@ -648,6 +648,266 @@ rosgraph_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f assignments/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make assignments/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
+#=============================================================================
+# Target rules for targets named assignment_cogar_genpy
+
+# Build rule for target.
+assignment_cogar_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_genpy
+.PHONY : assignment_cogar_genpy
+
+# fast build rule for target.
+assignment_cogar_genpy/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build
+.PHONY : assignment_cogar_genpy/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_gennodejs
+
+# Build rule for target.
+assignment_cogar_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_gennodejs
+.PHONY : assignment_cogar_gennodejs
+
+# fast build rule for target.
+assignment_cogar_gennodejs/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build
+.PHONY : assignment_cogar_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_genlisp
+
+# Build rule for target.
+assignment_cogar_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_genlisp
+.PHONY : assignment_cogar_genlisp
+
+# fast build rule for target.
+assignment_cogar_genlisp/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build
+.PHONY : assignment_cogar_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_geneus
+
+# Build rule for target.
+assignment_cogar_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_geneus
+.PHONY : assignment_cogar_geneus
+
+# fast build rule for target.
+assignment_cogar_geneus/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_geneus.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_geneus.dir/build
+.PHONY : assignment_cogar_geneus/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages
+
+# Build rule for target.
+assignment_cogar_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages
+.PHONY : assignment_cogar_generate_messages
+
+# fast build rule for target.
+assignment_cogar_generate_messages/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages.dir/build
+.PHONY : assignment_cogar_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_Order
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_Order: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_Order
+.PHONY : _assignment_cogar_generate_messages_check_deps_Order
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_Order/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_Order/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_OrderStatus
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_OrderStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_OrderStatus
+.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_OrderStatus/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages_cpp
+
+# Build rule for target.
+assignment_cogar_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages_cpp
+.PHONY : assignment_cogar_generate_messages_cpp
+
+# fast build rule for target.
+assignment_cogar_generate_messages_cpp/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build
+.PHONY : assignment_cogar_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages_eus
+
+# Build rule for target.
+assignment_cogar_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages_eus
+.PHONY : assignment_cogar_generate_messages_eus
+
+# fast build rule for target.
+assignment_cogar_generate_messages_eus/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build
+.PHONY : assignment_cogar_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages_py
+
+# Build rule for target.
+assignment_cogar_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages_py
+.PHONY : assignment_cogar_generate_messages_py
+
+# fast build rule for target.
+assignment_cogar_generate_messages_py/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build
+.PHONY : assignment_cogar_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_AssignTask
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_AssignTask: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_AssignTask
+.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_AssignTask/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_VerifyOrder
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_VerifyOrder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_VerifyOrder
+.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_VerifyOrder/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_Microphone
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_Microphone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_Microphone
+.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_Microphone/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_TableStatus
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_TableStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_TableStatus
+.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_TableStatus/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_gencpp
+
+# Build rule for target.
+assignment_cogar_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_gencpp
+.PHONY : assignment_cogar_gencpp
+
+# fast build rule for target.
+assignment_cogar_gencpp/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build
+.PHONY : assignment_cogar_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages_nodejs
+
+# Build rule for target.
+assignment_cogar_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages_nodejs
+.PHONY : assignment_cogar_generate_messages_nodejs
+
+# fast build rule for target.
+assignment_cogar_generate_messages_nodejs/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build
+.PHONY : assignment_cogar_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_RobotStatus
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_RobotStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_RobotStatus
+.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_RobotStatus/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_TriggerAnalysis
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_TriggerAnalysis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_TriggerAnalysis
+.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast
+
+#=============================================================================
+# Target rules for targets named assignment_cogar_generate_messages_lisp
+
+# Build rule for target.
+assignment_cogar_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assignment_cogar_generate_messages_lisp
+.PHONY : assignment_cogar_generate_messages_lisp
+
+# fast build rule for target.
+assignment_cogar_generate_messages_lisp/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build
+.PHONY : assignment_cogar_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named _assignment_cogar_generate_messages_check_deps_FoodPlacer
+
+# Build rule for target.
+_assignment_cogar_generate_messages_check_deps_FoodPlacer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _assignment_cogar_generate_messages_check_deps_FoodPlacer
+.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_FoodPlacer/fast:
+	$(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -698,6 +958,26 @@ help:
 	@echo "... assignments_genpy"
 	@echo "... assignments_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... assignment_cogar_genpy"
+	@echo "... assignment_cogar_gennodejs"
+	@echo "... assignment_cogar_genlisp"
+	@echo "... assignment_cogar_geneus"
+	@echo "... assignment_cogar_generate_messages"
+	@echo "... _assignment_cogar_generate_messages_check_deps_Order"
+	@echo "... _assignment_cogar_generate_messages_check_deps_OrderStatus"
+	@echo "... assignment_cogar_generate_messages_cpp"
+	@echo "... assignment_cogar_generate_messages_eus"
+	@echo "... assignment_cogar_generate_messages_py"
+	@echo "... _assignment_cogar_generate_messages_check_deps_AssignTask"
+	@echo "... _assignment_cogar_generate_messages_check_deps_VerifyOrder"
+	@echo "... _assignment_cogar_generate_messages_check_deps_Microphone"
+	@echo "... _assignment_cogar_generate_messages_check_deps_TableStatus"
+	@echo "... assignment_cogar_gencpp"
+	@echo "... assignment_cogar_generate_messages_nodejs"
+	@echo "... _assignment_cogar_generate_messages_check_deps_RobotStatus"
+	@echo "... _assignment_cogar_generate_messages_check_deps_TriggerAnalysis"
+	@echo "... assignment_cogar_generate_messages_lisp"
+	@echo "... _assignment_cogar_generate_messages_check_deps_FoodPlacer"
 .PHONY : help
 
 

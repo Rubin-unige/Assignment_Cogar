@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/rubin/Assignment_Cogar/build/gtest/cmake_install.cmake")
   include("/home/rubin/Assignment_Cogar/build/assignments/cmake_install.cmake")
+  include("/home/rubin/Assignment_Cogar/build/assignment_cogar/cmake_install.cmake")
 
 endif()
 

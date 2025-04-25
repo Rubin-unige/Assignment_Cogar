@@ -1,0 +1,9 @@
+# Request
+string order_id
+string robot_id
+string dish_name
+string table_id
+---
+# Response
+bool success
+string message

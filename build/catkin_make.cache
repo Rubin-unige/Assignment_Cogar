@@ -1,2 +1,2 @@
-assignments
+assignment_cogar:assignments
 -DCATKIN_DEVEL_PREFIX=/home/rubin/Assignment_Cogar/devel -DCMAKE_INSTALL_PREFIX=/home/rubin/Assignment_Cogar/install -G Unix Makefiles

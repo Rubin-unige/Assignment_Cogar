@@ -1,5 +1,0 @@
-<launch>
-    <node name="test_orchestrator" pkg="sushi_bot" type="test_orchestrator.py" output="screen"/>
-    <node name="test_food_placement" pkg="sushi_bot" type="test_food_placement.py" output="screen"/>
-</launch>
-
