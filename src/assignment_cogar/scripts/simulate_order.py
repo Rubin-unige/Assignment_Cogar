@@ -25,7 +25,7 @@ if __name__ == '__main__':
     order_count = 0
 
     try:
-        while not rospy.is_shutdown() and (time.time() - start_time) < 120:
+        while not rospy.is_shutdown() and (time.time() - start_time) < 30:
             order_msg = Order()
             order_msg.order_id = generate_order_id(order_count)
             order_msg.table_id = str(generate_random_table())

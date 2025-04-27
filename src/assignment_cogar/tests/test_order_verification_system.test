@@ -1,0 +1,12 @@
+<launch>
+    <node pkg="assignment_cogar" type="microphone_service.py" name="microphone_service" output="screen" />
+
+    <!-- Launch speaker mock -->
+    <node pkg="assignments" type="speaker_service.py" name="speaker_service" output="screen" />
+
+    <!-- Launch order verification system -->
+    <node pkg="assignment_cogar" type="order_verification_system.py" name="order_verification_system" output="screen" />
+
+    <!-- Finally, run the test -->
+    <test test-name="test_order_verification" pkg="assignment_cogar" type="test_order_verification.py" name="test_order_verification"  time-limit="120.0"/>
+</launch>

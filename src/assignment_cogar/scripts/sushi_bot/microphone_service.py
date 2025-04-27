@@ -8,7 +8,7 @@ from assignment_cogar.srv import Microphone, MicrophoneResponse
 RESPONSES = ["yes", "no", ""]
 
 def handle_microphone_request(req):
-    rospy.sleep(2)  # Simulate listening delay
+    rospy.sleep(0.5)  # Simulate listening delay
 
     # 10% chance the microphone "fails"
     if random.randint(1, 100) <= 5:

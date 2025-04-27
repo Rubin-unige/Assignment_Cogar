@@ -80,16 +80,27 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -113,27 +124,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,49 +168,289 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
 
 # Convenience name for target.
-assignment_cogar_genpy: assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
+_assignment_cogar_generate_messages_check_deps_FoodPlacer: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
 
-.PHONY : assignment_cogar_genpy
+.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer
 
 # fast build rule for target.
-assignment_cogar_genpy/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build
-.PHONY : assignment_cogar_genpy/fast
+_assignment_cogar_generate_messages_check_deps_FoodPlacer/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
+assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-assignment_cogar_gennodejs: assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
+assignment_cogar_generate_messages_lisp: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
 
-.PHONY : assignment_cogar_gennodejs
+.PHONY : assignment_cogar_generate_messages_lisp
 
 # fast build rule for target.
-assignment_cogar_gennodejs/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build
-.PHONY : assignment_cogar_gennodejs/fast
+assignment_cogar_generate_messages_lisp/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build
+.PHONY : assignment_cogar_generate_messages_lisp/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
 
 # Convenience name for target.
-assignment_cogar_genlisp: assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
+_assignment_cogar_generate_messages_check_deps_TriggerAnalysis: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
 
-.PHONY : assignment_cogar_genlisp
+.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis
 
 # fast build rule for target.
-assignment_cogar_genlisp/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build
-.PHONY : assignment_cogar_genlisp/fast
+_assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_RobotStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_RobotStatus/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+assignment_cogar_generate_messages_nodejs: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
+
+.PHONY : assignment_cogar_generate_messages_nodejs
+
+# fast build rule for target.
+assignment_cogar_generate_messages_nodejs/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build
+.PHONY : assignment_cogar_generate_messages_nodejs/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+
+# Convenience name for target.
+_run_tests_assignment_cogar_rostest_tests_test_food_placement.test: assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+
+.PHONY : _run_tests_assignment_cogar_rostest_tests_test_food_placement.test
+
+# fast build rule for target.
+_run_tests_assignment_cogar_rostest_tests_test_food_placement.test/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/build.make assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/build
+.PHONY : _run_tests_assignment_cogar_rostest_tests_test_food_placement.test/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_TableStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_TableStatus/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_Microphone: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_Microphone/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+
+# Convenience name for target.
+run_tests_assignment_cogar_rostest_tests_test_food_placement.test: assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/rule
+
+.PHONY : run_tests_assignment_cogar_rostest_tests_test_food_placement.test
+
+# fast build rule for target.
+run_tests_assignment_cogar_rostest_tests_test_food_placement.test/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/build.make assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_food_placement.test.dir/build
+.PHONY : run_tests_assignment_cogar_rostest_tests_test_food_placement.test/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_AssignTask: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_AssignTask/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
+
+# Convenience name for target.
+assignment_cogar_generate_messages_py: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
+
+.PHONY : assignment_cogar_generate_messages_py
+
+# fast build rule for target.
+assignment_cogar_generate_messages_py/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build
+.PHONY : assignment_cogar_generate_messages_py/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+assignment_cogar_generate_messages_eus: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
+
+.PHONY : assignment_cogar_generate_messages_eus
+
+# fast build rule for target.
+assignment_cogar_generate_messages_eus/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build
+.PHONY : assignment_cogar_generate_messages_eus/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+assignment_cogar_generate_messages_cpp: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
+
+.PHONY : assignment_cogar_generate_messages_cpp
+
+# fast build rule for target.
+assignment_cogar_generate_messages_cpp/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build
+.PHONY : assignment_cogar_generate_messages_cpp/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_OrderStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_OrderStatus/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/rule
+
+# Convenience name for target.
+_run_tests_assignment_cogar: assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/rule
+
+.PHONY : _run_tests_assignment_cogar
+
+# fast build rule for target.
+_run_tests_assignment_cogar/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/build.make assignment_cogar/CMakeFiles/_run_tests_assignment_cogar.dir/build
+.PHONY : _run_tests_assignment_cogar/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
+
+# Convenience name for target.
+assignment_cogar_gencpp: assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
+
+.PHONY : assignment_cogar_gencpp
+
+# fast build rule for target.
+assignment_cogar_gencpp/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build
+.PHONY : assignment_cogar_gencpp/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/rule
+
+# Convenience name for target.
+_run_tests_assignment_cogar_rostest: assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/rule
+
+.PHONY : _run_tests_assignment_cogar_rostest
+
+# fast build rule for target.
+_run_tests_assignment_cogar_rostest/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/build.make assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest.dir/build
+.PHONY : _run_tests_assignment_cogar_rostest/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_VerifyOrder: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_VerifyOrder/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder/fast
+
+# Convenience name for target.
+assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
+
+# Convenience name for target.
+_assignment_cogar_generate_messages_check_deps_Order: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
+
+.PHONY : _assignment_cogar_generate_messages_check_deps_Order
+
+# fast build rule for target.
+_assignment_cogar_generate_messages_check_deps_Order/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build
+.PHONY : _assignment_cogar_generate_messages_check_deps_Order/fast
 
 # Convenience name for target.
 assignment_cogar/CMakeFiles/assignment_cogar_geneus.dir/rule:
@@ -243,229 +483,124 @@ assignment_cogar_generate_messages/fast:
 .PHONY : assignment_cogar_generate_messages/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
+assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/rule
 
 # Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_Order: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/rule
+run_tests_assignment_cogar_rostest: assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/rule
 
-.PHONY : _assignment_cogar_generate_messages_check_deps_Order
+.PHONY : run_tests_assignment_cogar_rostest
 
 # fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_Order/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Order.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_Order/fast
+run_tests_assignment_cogar_rostest/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/build.make assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest.dir/build
+.PHONY : run_tests_assignment_cogar_rostest/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
+assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/rule
 
 # Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_OrderStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/rule
+clean_test_results_assignment_cogar: assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/rule
 
-.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus
+.PHONY : clean_test_results_assignment_cogar
 
 # fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_OrderStatus/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_OrderStatus.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_OrderStatus/fast
+clean_test_results_assignment_cogar/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/build.make assignment_cogar/CMakeFiles/clean_test_results_assignment_cogar.dir/build
+.PHONY : clean_test_results_assignment_cogar/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
+assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
 
 # Convenience name for target.
-assignment_cogar_generate_messages_cpp: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/rule
+assignment_cogar_genlisp: assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/rule
 
-.PHONY : assignment_cogar_generate_messages_cpp
+.PHONY : assignment_cogar_genlisp
 
 # fast build rule for target.
-assignment_cogar_generate_messages_cpp/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_cpp.dir/build
-.PHONY : assignment_cogar_generate_messages_cpp/fast
+assignment_cogar_genlisp/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genlisp.dir/build
+.PHONY : assignment_cogar_genlisp/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
+assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
 
 # Convenience name for target.
-assignment_cogar_generate_messages_eus: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/rule
+assignment_cogar_gennodejs: assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/rule
 
-.PHONY : assignment_cogar_generate_messages_eus
+.PHONY : assignment_cogar_gennodejs
 
 # fast build rule for target.
-assignment_cogar_generate_messages_eus/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_eus.dir/build
-.PHONY : assignment_cogar_generate_messages_eus/fast
+assignment_cogar_gennodejs/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gennodejs.dir/build
+.PHONY : assignment_cogar_gennodejs/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
+assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
 
 # Convenience name for target.
-assignment_cogar_generate_messages_py: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/rule
+assignment_cogar_genpy: assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/rule
 
-.PHONY : assignment_cogar_generate_messages_py
+.PHONY : assignment_cogar_genpy
 
 # fast build rule for target.
-assignment_cogar_generate_messages_py/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_py.dir/build
-.PHONY : assignment_cogar_generate_messages_py/fast
+assignment_cogar_genpy/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_genpy.dir/build
+.PHONY : assignment_cogar_genpy/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
+assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/rule
 
 # Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_AssignTask: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/rule
+run_tests_assignment_cogar: assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/rule
 
-.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask
+.PHONY : run_tests_assignment_cogar
 
 # fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_AssignTask/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_AssignTask.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_AssignTask/fast
+run_tests_assignment_cogar/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/build.make assignment_cogar/CMakeFiles/run_tests_assignment_cogar.dir/build
+.PHONY : run_tests_assignment_cogar/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
+assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
 
 # Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_VerifyOrder: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/rule
+_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test: assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
 
-.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder
+.PHONY : _run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test
 
 # fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_VerifyOrder/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_VerifyOrder.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_VerifyOrder/fast
+_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/build.make assignment_cogar/CMakeFiles/_run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/build
+.PHONY : _run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test/fast
 
 # Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
+assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
+.PHONY : assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
 
 # Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_Microphone: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/rule
+run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test: assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/rule
 
-.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone
+.PHONY : run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test
 
 # fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_Microphone/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_Microphone.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_Microphone/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
-
-# Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_TableStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/rule
-
-.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus
-
-# fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_TableStatus/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TableStatus.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_TableStatus/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
-
-# Convenience name for target.
-assignment_cogar_gencpp: assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/rule
-
-.PHONY : assignment_cogar_gencpp
-
-# fast build rule for target.
-assignment_cogar_gencpp/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_gencpp.dir/build
-.PHONY : assignment_cogar_gencpp/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-assignment_cogar_generate_messages_nodejs: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/rule
-
-.PHONY : assignment_cogar_generate_messages_nodejs
-
-# fast build rule for target.
-assignment_cogar_generate_messages_nodejs/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_nodejs.dir/build
-.PHONY : assignment_cogar_generate_messages_nodejs/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
-
-# Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_RobotStatus: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/rule
-
-.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus
-
-# fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_RobotStatus/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_RobotStatus.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_RobotStatus/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
-
-# Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_TriggerAnalysis: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/rule
-
-.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis
-
-# fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_TriggerAnalysis.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_TriggerAnalysis/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-assignment_cogar_generate_messages_lisp: assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/rule
-
-.PHONY : assignment_cogar_generate_messages_lisp
-
-# fast build rule for target.
-assignment_cogar_generate_messages_lisp/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build.make assignment_cogar/CMakeFiles/assignment_cogar_generate_messages_lisp.dir/build
-.PHONY : assignment_cogar_generate_messages_lisp/fast
-
-# Convenience name for target.
-assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f CMakeFiles/Makefile2 assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
-.PHONY : assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
-
-# Convenience name for target.
-_assignment_cogar_generate_messages_check_deps_FoodPlacer: assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/rule
-
-.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer
-
-# fast build rule for target.
-_assignment_cogar_generate_messages_check_deps_FoodPlacer/fast:
-	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build.make assignment_cogar/CMakeFiles/_assignment_cogar_generate_messages_check_deps_FoodPlacer.dir/build
-.PHONY : _assignment_cogar_generate_messages_check_deps_FoodPlacer/fast
+run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test/fast:
+	cd /home/rubin/Assignment_Cogar/build && $(MAKE) -f assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/build.make assignment_cogar/CMakeFiles/run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test.dir/build
+.PHONY : run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test/fast
 
 # Help Target
 help:
@@ -475,31 +610,40 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... test"
-	@echo "... assignment_cogar_genpy"
-	@echo "... assignment_cogar_gennodejs"
-	@echo "... install/local"
-	@echo "... assignment_cogar_genlisp"
-	@echo "... assignment_cogar_geneus"
-	@echo "... assignment_cogar_generate_messages"
-	@echo "... _assignment_cogar_generate_messages_check_deps_Order"
-	@echo "... _assignment_cogar_generate_messages_check_deps_OrderStatus"
-	@echo "... list_install_components"
-	@echo "... assignment_cogar_generate_messages_cpp"
-	@echo "... assignment_cogar_generate_messages_eus"
-	@echo "... assignment_cogar_generate_messages_py"
-	@echo "... _assignment_cogar_generate_messages_check_deps_AssignTask"
-	@echo "... _assignment_cogar_generate_messages_check_deps_VerifyOrder"
-	@echo "... _assignment_cogar_generate_messages_check_deps_Microphone"
-	@echo "... _assignment_cogar_generate_messages_check_deps_TableStatus"
-	@echo "... assignment_cogar_gencpp"
-	@echo "... assignment_cogar_generate_messages_nodejs"
-	@echo "... _assignment_cogar_generate_messages_check_deps_RobotStatus"
-	@echo "... _assignment_cogar_generate_messages_check_deps_TriggerAnalysis"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... assignment_cogar_generate_messages_lisp"
 	@echo "... _assignment_cogar_generate_messages_check_deps_FoodPlacer"
+	@echo "... assignment_cogar_generate_messages_lisp"
+	@echo "... _assignment_cogar_generate_messages_check_deps_TriggerAnalysis"
+	@echo "... _assignment_cogar_generate_messages_check_deps_RobotStatus"
+	@echo "... assignment_cogar_generate_messages_nodejs"
+	@echo "... _run_tests_assignment_cogar_rostest_tests_test_food_placement.test"
+	@echo "... _assignment_cogar_generate_messages_check_deps_TableStatus"
+	@echo "... _assignment_cogar_generate_messages_check_deps_Microphone"
+	@echo "... run_tests_assignment_cogar_rostest_tests_test_food_placement.test"
+	@echo "... _assignment_cogar_generate_messages_check_deps_AssignTask"
+	@echo "... assignment_cogar_generate_messages_py"
+	@echo "... install/local"
+	@echo "... assignment_cogar_generate_messages_eus"
+	@echo "... assignment_cogar_generate_messages_cpp"
+	@echo "... _assignment_cogar_generate_messages_check_deps_OrderStatus"
+	@echo "... _run_tests_assignment_cogar"
+	@echo "... assignment_cogar_gencpp"
+	@echo "... _run_tests_assignment_cogar_rostest"
+	@echo "... _assignment_cogar_generate_messages_check_deps_VerifyOrder"
+	@echo "... _assignment_cogar_generate_messages_check_deps_Order"
+	@echo "... assignment_cogar_geneus"
+	@echo "... assignment_cogar_generate_messages"
+	@echo "... run_tests_assignment_cogar_rostest"
+	@echo "... clean_test_results_assignment_cogar"
+	@echo "... list_install_components"
+	@echo "... assignment_cogar_genlisp"
+	@echo "... assignment_cogar_gennodejs"
+	@echo "... assignment_cogar_genpy"
+	@echo "... run_tests_assignment_cogar"
+	@echo "... _run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test"
+	@echo "... test"
+	@echo "... run_tests_assignment_cogar_rostest_tests_test_order_verification_system.test"
 .PHONY : help
 
 
