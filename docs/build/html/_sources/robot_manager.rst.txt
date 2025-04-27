@@ -5,6 +5,9 @@ Robot Manager System
    :local:
    :depth: 1
 
+.. index::
+   Robot Manager
+   
 1. System Overview
 -------------------
 

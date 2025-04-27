@@ -5,6 +5,9 @@ Testing
    :local:
    :depth: 1
 
+.. index::
+   Testing
+
 1. Order Verification System Test
 ----------------------------------
 

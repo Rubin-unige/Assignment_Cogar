@@ -5,6 +5,9 @@ Food Placement Reasoning System
    :local:
    :depth: 1
 
+.. index::
+   Food Placement Reasoning System
+
 1. System Overview
 -------------------
 The `FoodPlacer` service is responsible for performing the final act of food delivery — placing the dish on the table — while taking into account the real-time condition of the table surface. It utilizes strategy patterns to handle different table states and interfaces with a low-level arm controller to execute food placement.

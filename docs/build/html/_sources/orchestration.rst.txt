@@ -5,6 +5,9 @@ Orchestration System
    :local:
    :depth: 1
 
+.. index::
+   Orchestration System
+
 1. System Overview
 -------------------
 The Orchestration System is the core coordination unit in a sushi restaurant that manages autonomous robots. It ensures efficient order processing by coordinating the robots and tracking their tasks. The key responsibilities of the system include:

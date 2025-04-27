@@ -86,13 +86,13 @@
 <h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading"></a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#system-setup" id="id8">1. System Setup</a></p></li>
-<li><p><a class="reference internal" href="#launching-the-system" id="id9">2. Launching the System</a></p></li>
-<li><p><a class="reference internal" href="#testing-the-implementation" id="id10">3. Testing the Implementation</a></p></li>
+<li><p><a class="reference internal" href="#system-setup" id="id9">1. System Setup</a></p></li>
+<li><p><a class="reference internal" href="#launching-the-system" id="id10">2. Launching the System</a></p></li>
+<li><p><a class="reference internal" href="#testing-the-implementation" id="id11">3. Testing the Implementation</a></p></li>
 </ul>
 </nav>
 <section id="system-setup">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">1. System Setup</a><a class="headerlink" href="#system-setup" title="Permalink to this heading"></a></h2>
+<span id="index-0"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">1. System Setup</a><a class="headerlink" href="#system-setup" title="Permalink to this heading"></a></h2>
 <p><strong>Initial Setup:</strong></p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Terminal - Initial Setup</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
@@ -105,7 +105,7 @@ catkin_make
 </div>
 </section>
 <section id="launching-the-system">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">2. Launching the System</a><a class="headerlink" href="#launching-the-system" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">2. Launching the System</a><a class="headerlink" href="#launching-the-system" title="Permalink to this heading"></a></h2>
 <p>Launch the system components in separate terminals in the following order:</p>
 <ol class="arabic simple">
 <li><p><strong>Orchestration System</strong> (Central Control)</p></li>
@@ -143,6 +143,15 @@ catkin_make
 </pre></div>
 </div>
 </div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Mock Order Generator</strong></p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Terminal 5 - Run Mock Order Generator (runs for 2 min)</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>assignment_cogar<span class="w"> </span>simulate_order.py
+</pre></div>
+</div>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
@@ -153,12 +162,16 @@ catkin_make
 </div>
 </section>
 <section id="testing-the-implementation">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">3. Testing the Implementation</a><a class="headerlink" href="#testing-the-implementation" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">3. Testing the Implementation</a><a class="headerlink" href="#testing-the-implementation" title="Permalink to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to run the individual nodes manually to test the system. The test files (test_order_verification_system.test and test_food_placement.test) will automatically launch all the necessary nodes before running the tests.</p>
+</div>
 <ol class="arabic simple">
 <li><p><strong>Testing Order Verification System</strong></p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Terminal 1 - Order Verification System Test</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Terminal 1 - Order Verification System Test</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_order_verification_system.test
 </pre></div>
 </div>
@@ -166,8 +179,8 @@ catkin_make
 <ol class="arabic simple" start="2">
 <li><p><strong>Testing Food Placement Reasoning System</strong></p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Terminal 2 - Food Placement Reasoning System Test</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Terminal 2 - Food Placement Reasoning System Test</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_food_placement.test
 </pre></div>
 </div>

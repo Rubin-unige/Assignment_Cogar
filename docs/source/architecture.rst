@@ -5,6 +5,9 @@ System Architecture
    :local:
    :depth: 1
 
+.. index::
+   System Architecture
+
 1. Component Diagram
 --------------------
 

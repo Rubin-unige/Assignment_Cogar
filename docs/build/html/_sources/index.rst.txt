@@ -3,10 +3,9 @@ First Assignment of Cognitive Architecture for Robotics (COGAR)
 
 **Autonomous Waiters in a Sushi Restaurant** 
 
-:Author: Rubin Khadka Chhetri | Sarvenaz Ashoori
-:Group: B
-:Version: 1.0
-:Date: |today|
+:Authors:   Rubin Khadka Chhetri | Sarvenaz Ashoori
+:Group:     B
+:Version:   1.0
 
 Project Overview
 ----------------
@@ -40,7 +39,7 @@ Important Notes
 - **Group Topic**: 2 (Autonomous Waiters)
 - **Key Components**:
    1. Orchestration System
-   2. Food Placement Reasoning
+   2. Food Placement Reasoning System
    3. Order Verification System
 
 Indices and Tables

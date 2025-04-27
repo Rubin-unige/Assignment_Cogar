@@ -5,6 +5,9 @@ Order Verification System
    :local:
    :depth: 1
 
+.. index::
+   Order Verification System
+   
 1. System Overview
 -------------------
 The Order Verification System ensures accurate order fulfillment through voice-based customer confirmation. Its responsibilities include:

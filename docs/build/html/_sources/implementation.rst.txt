@@ -5,6 +5,9 @@ Implementation
    :local:
    :depth: 1
 
+.. index::
+   Implementation
+
 1. System Setup
 ----------------
 
@@ -51,6 +54,13 @@ Launch the system components in separate terminals in the following order:
 
     roslaunch assignment_cogar food_placement.launch
 
+5. **Mock Order Generator**
+
+.. code-block:: bash
+    :caption: Terminal 5 - Run Mock Order Generator (runs for 2 min)
+
+    rosrun assignment_cogar simulate_order.py
+
 .. important::
    - Launch components in this exact sequence for proper initialization
    - Each terminal will display its component's operational logs
@@ -58,6 +68,10 @@ Launch the system components in separate terminals in the following order:
 
 3. Testing the Implementation
 ------------------------------
+
+.. note::
+    You don't need to run the individual nodes manually to test the system. The test files (test_order_verification_system.test and test_food_placement.test) will automatically launch all the necessary nodes before running the tests.
+
 1. **Testing Order Verification System**
 
 .. code-block:: bash

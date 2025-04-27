@@ -103,3 +103,39 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment_cogar" TYPE FILE FILES "/home/rubin/Assignment_Cogar/src/assignment_cogar/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/simulate_order.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/food_placer.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/orchestrator_system.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/order_verification_system.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/microphone_service.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/robot_manager.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/visual_perception_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/test_food_placement.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/assignment_cogar" TYPE PROGRAM FILES "/home/rubin/Assignment_Cogar/build/assignment_cogar/catkin_generated/installspace/test_order_verification.py")
+endif()
+
