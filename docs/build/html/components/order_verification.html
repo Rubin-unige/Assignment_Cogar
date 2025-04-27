@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Verification System &mdash; Cogar Assignment 1.0 documentation</title>
+  <title>Order Verification System &mdash; First Assignment of COGAR 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,7 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Orchestrator Subsystem" href="orchestrator.html" /> 
+    <link rel="next" title="Testing" href="../testing.html" />
+    <link rel="prev" title="Food Placement Reasoning" href="food_placement.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +32,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            Cogar Assignment
+            First Assignment of COGAR
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -41,12 +42,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="orchestrator.html">Orchestrator Subsystem</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Order Verification System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#component-descriptions"><strong>Component Descriptions:</strong></a></li>
-</ul>
-</li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Orchestration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="food_placement.html">Food Placement Reasoning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Order Verification System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation.html">Implementation</a></li>
 </ul>
 
         </div>
@@ -55,7 +58,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Cogar Assignment</a>
+          <a href="../index.html">First Assignment of COGAR</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -65,7 +68,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Order Verification System</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/YOUR-GITHUB-USERNAME/Assignment_Cogar/blob/main/docs/source/components/order_verification.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/rubin-unige/Assignment_Cogar/blob/main/docs/source/components/order_verification.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -75,56 +78,14 @@
              
   <section id="order-verification-system">
 <h1>Order Verification System<a class="headerlink" href="#order-verification-system" title="Permalink to this heading"></a></h1>
-<p>The <cite>OrderVerificationSystem</cite> consists of three key components: <strong>AnnounceOrder</strong>, <strong>ListenToCustomer</strong>, and <strong>DecisionHandler</strong>. Each component has specific roles, and their interactions are essential to the overall functioning of the system.</p>
-<img alt="Architecture Component Diagram" class="align-center" src="static/architecture_diagram.png" />
-<section id="component-descriptions">
-<h2><strong>Component Descriptions:</strong><a class="headerlink" href="#component-descriptions" title="Permalink to this heading"></a></h2>
-<ol class="arabic">
-<li><p><strong>AnnounceOrder</strong> (Service Component):
-- <strong>Role</strong>: Announces the order to the customer.
-- <strong>Interface</strong>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Service Interface</strong>: <cite>/speaker</cite></p></li>
-<li><p><strong>Service Request</strong>: <cite>SpeakerRequest</cite></p></li>
-<li><p><strong>Service Response</strong>: <cite>SpeakerResponse</cite></p></li>
-<li><p><strong>Interface Type</strong>: Stateless, Service-based, Strongly-typed.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><strong>ListenToCustomer</strong> (Service Component):
-- <strong>Role</strong>: Listens for the customer’s response via the microphone.
-- <strong>Interface</strong>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Service Interface</strong>: <cite>/microphone</cite></p></li>
-<li><p><strong>Service Request</strong>: <cite>MicrophoneRequest</cite></p></li>
-<li><p><strong>Service Response</strong>: <cite>MicrophoneResponse</cite></p></li>
-<li><p><strong>Interface Type</strong>: Stateless, Service-based, Strongly-typed.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><strong>DecisionHandler</strong> (Stateful Component):
-- <strong>Role</strong>: Handles decision-making based on the customer’s response and manages retries.
-- <strong>Interface</strong>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Service Interface</strong>: <cite>/speaker</cite> (for announcements)</p></li>
-<li><p><strong>Service Interface</strong>: <cite>/microphone</cite> (for capturing responses)</p></li>
-<li><p><strong>Topic Interface</strong>: <cite>/order_status</cite> (for publishing order status)</p></li>
-<li><p><strong>Interface Type</strong>: Stateful, Service-based, Topic-based, Strongly-typed.</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ol>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="orchestrator.html" class="btn btn-neutral float-left" title="Orchestrator Subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="food_placement.html" class="btn btn-neutral float-left" title="Food Placement Reasoning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

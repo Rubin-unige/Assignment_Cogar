@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Placement Reasoning System &mdash; First Assignment of COGAR 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Testing" href="testing.html" />
+    <link rel="prev" title="Robot Manager System" href="robot_manager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            First Assignment of COGAR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Orchestration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_verification.html">Order Verification System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_manager.html">Robot Manager System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Food Placement Reasoning System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-overview">1. System Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-interfaces">2. ROS Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behavioral-flow">3. Behavioral Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-integration">4. System Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-pattern">Design Pattern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">First Assignment of COGAR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Food Placement Reasoning System</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Rubin-unige/Assignment_Cogar/blob/main/docs/source/food_placement.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="food-placement-reasoning-system">
+<h1>Food Placement Reasoning System<a class="headerlink" href="#food-placement-reasoning-system" title="Permalink to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#system-overview" id="id5">1. System Overview</a></p></li>
+<li><p><a class="reference internal" href="#ros-interfaces" id="id6">2. ROS Interfaces</a></p></li>
+<li><p><a class="reference internal" href="#behavioral-flow" id="id7">3. Behavioral Flow</a></p></li>
+<li><p><a class="reference internal" href="#system-integration" id="id8">4. System Integration</a></p></li>
+</ul>
+</nav>
+<section id="system-overview">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">1. System Overview</a><a class="headerlink" href="#system-overview" title="Permalink to this heading"></a></h2>
+<p>The <cite>FoodPlacer</cite> service is responsible for performing the final act of food delivery — placing the dish on the table — while taking into account the real-time condition of the table surface. It utilizes strategy patterns to handle different table states and interfaces with a low-level arm controller to execute food placement.</p>
+<p>This service is called by the <cite>RobotManager</cite> once order verification and visual analysis have been completed.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/food_placement_arch.png"><img alt="Food Placement Reasoning System Architecture" src="_images/food_placement_arch.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 9:</strong> Food Placement Reasoning System Architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Responsibilities</strong></p>
+<ul class="simple">
+<li><p>Interpret visual table status to choose placement strategy.</p></li>
+<li><p>Generate and evaluate multiple candidate poses for food placement.</p></li>
+<li><p>Check reachability using a motion feasibility service.</p></li>
+<li><p>Trigger dish placement action if pose is valid.</p></li>
+<li><p>Handle optional removal of empty plate.</p></li>
+<li><p>Return final result to <cite>RobotManager</cite>.</p></li>
+</ul>
+</section>
+<section id="ros-interfaces">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">2. ROS Interfaces</a><a class="headerlink" href="#ros-interfaces" title="Permalink to this heading"></a></h2>
+<p><strong>Service (Server)</strong></p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">FoodPlacer Service Interface</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 35.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/robotX/food_placer_service</p></td>
+<td><p>ROS Service</p></td>
+<td><p>Called by RobotManager to initiate food placement</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Service (Client)</strong></p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">External Services Called</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+<col style="width: 35.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Called Service</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/check_joint_state</p></td>
+<td><p>ROS Service</p></td>
+<td><p>Verifies reachability of candidate poses</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="behavioral-flow">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">3. Behavioral Flow</a><a class="headerlink" href="#behavioral-flow" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Trigger</strong></p>
+<blockquote>
+<div><p>The <cite>RobotManager</cite> calls <cite>/robotX/food_placer_service</cite>, passing the current table status and whether the table has an empty plate.</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt><strong>Select Placement Strategy</strong></dt><dd><dl class="simple">
+<dt>Based on table status (<cite>EMPTY</cite>, <cite>PARTIALLY_OCCUPIED</cite>, or <cite>CLUTTERED</cite>), a corresponding strategy is selected</dt><dd><ul class="simple">
+<li><p><cite>EmptyTableStrategy</cite>: Place in default center position.</p></li>
+<li><p><cite>OccupiedTableStrategy</cite>: Try multiple scattered positions.</p></li>
+<li><p><cite>ClutteredTableStrategy</cite>: Try smaller reachable zones.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Pose Generation &amp; Validation</strong></dt><dd><ul class="simple">
+<li><p>Candidate poses are generated using the chosen strategy.</p></li>
+<li><p>Each pose is checked using <cite>/check_joint_state</cite> to determine if it’s reachable.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Placement Attempt</strong></dt><dd><ul class="simple">
+<li><p>If a pose is reachable, the robot simulates food placement at that location.</p></li>
+<li><p>If the table has an empty plate, a short delay simulates its removal.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Success / Failure</strong></dt><dd><ul class="simple">
+<li><p>Returns <cite>True</cite> if placement succeeds within 3 tries.</p></li>
+<li><p>Otherwise, returns <cite>False</cite> and optionally triggers fallback logic.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="system-integration">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">4. System Integration</a><a class="headerlink" href="#system-integration" title="Permalink to this heading"></a></h2>
+<p>The Food Placement Reasoning module relies on integration with multiple external systems to determine a valid pose and perform the food placement. These integration points ensure smooth coordination with perception, motion control, and robot management components.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">External System Communication</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 9.5%" />
+<col style="width: 19.0%" />
+<col style="width: 14.3%" />
+<col style="width: 23.8%" />
+<col style="width: 9.5%" />
+<col style="width: 9.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p>Direction</p></th>
+<th class="head"><p>Interface</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data Format</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Robot Manager</p></td>
+<td><p>Input</p></td>
+<td><p>/robotX/food_placer_service</p></td>
+<td><p>ROS Service</p></td>
+<td><p>table_status, has_empty_plate</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Arm Motion Service</p></td>
+<td><p>Output</p></td>
+<td><p>/check_joint_state</p></td>
+<td><p>ROS Service</p></td>
+<td><p>joint positions/velocities</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Robot Motion Controller</p></td>
+<td><p>Output</p></td>
+<td><p>Internal API</p></td>
+<td><p>Method Call</p></td>
+<td><p>pose (x, y, z)</p></td>
+<td><p>Stateful</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<section id="design-pattern">
+<h3>Design Pattern<a class="headerlink" href="#design-pattern" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt><strong>Strategy Pattern</strong></dt><dd><dl class="simple">
+<dt>Table state is abstracted using different placement strategies:</dt><dd><ul class="simple">
+<li><p><cite>EmptyTableStrategy</cite></p></li>
+<li><p><cite>OccupiedTableStrategy</cite></p></li>
+<li><p><cite>ClutteredTableStrategy</cite></p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Can be extended to include other placement strategies.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="robot_manager.html" class="btn btn-neutral float-left" title="Robot Manager System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sarvenaz Ashoori | Rubin Khadka Chhetri.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

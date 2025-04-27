@@ -1,0 +1,24 @@
+Orchestration System
+====================
+
+Interface Description
+---------------------
+
+- **Type**: Stateful service component
+- **Communication**: ROS service (strongly typed)
+- **Inputs**: 
+  - Order requests
+  - Robot status updates
+- **Outputs**:
+  - Task assignments
+  - System notifications
+
+Behavioral Diagram
+------------------
+
+
+The Orchestration System operates in three main states:
+
+1. **Idle**: Waiting for new orders
+2. **Assigning**: Selecting optimal robot for task
+3. **Monitoring**: Tracking task progress

@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Implementation &mdash; First Assignment of COGAR 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Testing" href="testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            First Assignment of COGAR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Orchestration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_verification.html">Order Verification System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_manager.html">Robot Manager System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="food_placement.html">Food Placement Reasoning System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-setup">1. System Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launching-the-system">2. Launching the System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-implementation">3. Testing the Implementation</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">First Assignment of COGAR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Implementation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Rubin-unige/Assignment_Cogar/blob/main/docs/source/implementation.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="implementation">
+<h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#system-setup" id="id8">1. System Setup</a></p></li>
+<li><p><a class="reference internal" href="#launching-the-system" id="id9">2. Launching the System</a></p></li>
+<li><p><a class="reference internal" href="#testing-the-implementation" id="id10">3. Testing the Implementation</a></p></li>
+</ul>
+</nav>
+<section id="system-setup">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">1. System Setup</a><a class="headerlink" href="#system-setup" title="Permalink to this heading"></a></h2>
+<p><strong>Initial Setup:</strong></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Terminal - Initial Setup</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Rubin-unige/Assignment_Cogar.git
+<span class="nb">cd</span><span class="w"> </span>Assignment_Cogar
+catkin_make
+<span class="nb">source</span><span class="w"> </span>devel/setup.bash
+</pre></div>
+</div>
+</div>
+</section>
+<section id="launching-the-system">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">2. Launching the System</a><a class="headerlink" href="#launching-the-system" title="Permalink to this heading"></a></h2>
+<p>Launch the system components in separate terminals in the following order:</p>
+<ol class="arabic simple">
+<li><p><strong>Orchestration System</strong> (Central Control)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Terminal 1 - Control Center</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>assignment_cogar<span class="w"> </span>orchestrator.launch
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Robot Fleet</strong> (5 TIAGo Waiters)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Terminal 2 - Robot Team</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>assignment_cogar<span class="w"> </span>robots.launch
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Order Verification System</strong> (Customer Interaction)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Terminal 3 - Order Validation</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>assignment_cogar<span class="w"> </span>order_verification.launch
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Food Placement System</strong> (Table Service)</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Terminal 4 - Serving Logic</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>assignment_cogar<span class="w"> </span>food_placement.launch
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Launch components in this exact sequence for proper initialization</p></li>
+<li><p>Each terminal will display its component’s operational logs</p></li>
+<li><p>Wait for each component to fully initialize (look for “READY” messages) before launching the next</p></li>
+</ul>
+</div>
+</section>
+<section id="testing-the-implementation">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">3. Testing the Implementation</a><a class="headerlink" href="#testing-the-implementation" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Testing Order Verification System</strong></p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Terminal 1 - Order Verification System Test</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_order_verification_system.test
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Testing Food Placement Reasoning System</strong></p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Terminal 2 - Food Placement Reasoning System Test</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_food_placement_system.test
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sarvenaz Ashoori | Rubin Khadka Chhetri.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

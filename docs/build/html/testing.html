@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing &mdash; First Assignment of COGAR 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Implementation" href="implementation.html" />
+    <link rel="prev" title="Food Placement Reasoning System" href="food_placement.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            First Assignment of COGAR
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Orchestration System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order_verification.html">Order Verification System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_manager.html">Robot Manager System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="food_placement.html">Food Placement Reasoning System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#order-verification-system-test">1. Order Verification System Test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-implementation">2. Test Implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#test-configuration">2.1 Test Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-execution">2.2 Test Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#test-cases-kpi">3. Test Cases (KPI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functional-validation">3.1 Functional Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performance-metrics">3.2 Performance Metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#results">3.3 Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">4. Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#strengths">4.1 Strengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">4.2 Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">5. Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#food-placement-reasoning-system-test">2. Food Placement Reasoning System Test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">First Assignment of COGAR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Testing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Rubin-unige/Assignment_Cogar/blob/main/docs/source/testing.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#order-verification-system-test" id="id6">1. Order Verification System Test</a></p></li>
+<li><p><a class="reference internal" href="#food-placement-reasoning-system-test" id="id7">2. Food Placement Reasoning System Test</a></p></li>
+</ul>
+</nav>
+<section id="order-verification-system-test">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">1. Order Verification System Test</a><a class="headerlink" href="#order-verification-system-test" title="Permalink to this heading"></a></h2>
+<section id="overview">
+<h3>1. Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h3>
+<p>Validates the ROS-based order verification service for sushi restaurant robots, ensuring:</p>
+<ul class="simple">
+<li><p>Service availability and responsiveness</p></li>
+<li><p>Correct order processing workflow</p></li>
+<li><p>Performance under operational conditions</p></li>
+<li><p>Graceful error handling</p></li>
+</ul>
+</section>
+<section id="test-implementation">
+<h3>2. Test Implementation<a class="headerlink" href="#test-implementation" title="Permalink to this heading"></a></h3>
+<section id="test-configuration">
+<h4>2.1 Test Configuration<a class="headerlink" href="#test-configuration" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Test Environment</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Test Type</p></td>
+<td><p>Component Integration Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>System Under Test</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/order_verification</span></code> service + <code class="docutils literal notranslate"><span class="pre">/order_status</span></code> publisher</p></td>
+</tr>
+<tr class="row-even"><td><p>Mock Services</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/speaker</span></code> + <code class="docutils literal notranslate"><span class="pre">/microphone</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Test Framework</p></td>
+<td><p>rostest + unittest</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="test-execution">
+<h4>2.2 Test Execution<a class="headerlink" href="#test-execution" title="Permalink to this heading"></a></h4>
+<p>This video demonstrates the testing of verification and rejection processes in the Order Verification System.</p>
+<video controls width="700" style="display:block;margin:0 auto">
+    <source src="_static/order_test.mp4" type="video/mp4">
+    Video: Test execution demonstrating verification and rejection cases
+</video><div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Test Command</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_order_verification_system.test
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="test-cases-kpi">
+<h3>3. Test Cases (KPI)<a class="headerlink" href="#test-cases-kpi" title="Permalink to this heading"></a></h3>
+<section id="functional-validation">
+<h4>3.1 Functional Validation<a class="headerlink" href="#functional-validation" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Functional Test Cases</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 40.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Case</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Validation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Service Availability</p></td>
+<td><p>Verify service startup time</p></td>
+<td><p>≤5 seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Order Processing</p></td>
+<td><p>Test valid order flow</p></td>
+<td><p>Response received</p></td>
+</tr>
+<tr class="row-even"><td><p>Error Handling</p></td>
+<td><p>Verify invalid order handling</p></td>
+<td><p>No system crashes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="performance-metrics">
+<h4>3.2 Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Performance Benchmarks</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 40.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Case</p></th>
+<th class="head"><p>Measurement</p></th>
+<th class="head"><p>Target</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response Time</p></td>
+<td><p>Average service latency</p></td>
+<td><p>≤8 seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Throughput</p></td>
+<td><p>Orders processed per second</p></td>
+<td><p>≥0.083 ops/s</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results">
+<h4>3.3 Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">KPI SUMMARY</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 18.8%" />
+<col style="width: 12.5%" />
+<col style="width: 18.8%" />
+<col style="width: 18.8%" />
+<col style="width: 31.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Measurement</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Service Availability</p></td>
+<td><p>1.23s</p></td>
+<td><p>≤5s</p></td>
+<td><p>PASS</p></td>
+<td><p>From test_01_service_availability</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal Operation</p></td>
+<td><p>6.41s</p></td>
+<td><p>N/A</p></td>
+<td><p>PASS</p></td>
+<td><p>Responded but verification failed</p></td>
+</tr>
+<tr class="row-even"><td><p>Response Time</p></td>
+<td><p>6.41s</p></td>
+<td><p>≤8s</p></td>
+<td><p>PASS</p></td>
+<td><p>Average from test_03_response_time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Throughput</p></td>
+<td><p>0.12 ops/s</p></td>
+<td><p>≥0.083 ops/s</p></td>
+<td><p>PASS</p></td>
+<td><p>From test_04_throughput</p></td>
+</tr>
+<tr class="row-even"><td><p>Error Handling</p></td>
+<td><p>Responded</p></td>
+<td><p>N/A</p></td>
+<td><p>PASS</p></td>
+<td><p>test_05_error_handling</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to how Microphone service handles the message the result can drastically vary.</p>
+</div>
+</section>
+</section>
+<section id="analysis">
+<h3>4. Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading"></a></h3>
+<section id="strengths">
+<h4>4.1 Strengths<a class="headerlink" href="#strengths" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>100% requirement coverage achieved</p></li>
+<li><p>Throughput exceeded by 20% (0.12 ops/s vs 0.083 target)</p></li>
+<li><p>Robust error handling demonstrated</p></li>
+</ul>
+</section>
+<section id="limitations">
+<h4>4.2 Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Microphone latency impacts response times (avg 6.41s)</p></li>
+<li><p>Mock services differ from production behavior</p></li>
+<li><p>Limited to 10 concurrent orders in testing</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h3>5. Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h3>
+<p>The system demonstrates:</p>
+<ul class="simple">
+<li><p>Full functional test coverage</p></li>
+<li><p>Performance exceeding baseline KPIs</p></li>
+<li><p>Reliable error handling capabilities</p></li>
+</ul>
+</section>
+</section>
+<section id="food-placement-reasoning-system-test">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">2. Food Placement Reasoning System Test</a><a class="headerlink" href="#food-placement-reasoning-system-test" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="food_placement.html" class="btn btn-neutral float-left" title="Food Placement Reasoning System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="implementation.html" class="btn btn-neutral float-right" title="Implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sarvenaz Ashoori | Rubin Khadka Chhetri.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

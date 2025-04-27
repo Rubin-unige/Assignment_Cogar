@@ -6,9 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Verification System &mdash; Cogar Assignment 1.0 documentation</title>
+  <title>Order Verification System &mdash; First Assignment of COGAR 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -16,10 +18,13 @@
       <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="COGAR Documentation" href="index.html" /> 
+    <link rel="next" title="Robot Manager System" href="robot_manager.html" />
+    <link rel="prev" title="Orchestration System" href="orchestration.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +36,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            Cogar Assignment
+            First Assignment of COGAR
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -41,14 +46,33 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">System Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Orchestration System</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Order Verification System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#announceorder-component">AnnounceOrder Component</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#listentocustomer-component">ListenToCustomer Component</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#decisionhandler-component">DecisionHandler Component</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#summary-of-component-interfaces">Summary of Component Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-overview">1. System Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-components">2. Core Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#announce-order">1. Announce Order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listen-to-customer">2. Listen To Customer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decision-handler">3. Decision Handler</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#system-integration">3. System Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-patterns">Design Patterns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#behavioral-diagram">4. Behavioral Diagram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sequence-diagram">1. Sequence Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statemachine-diagram">2. StateMachine Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robot_manager.html">Robot Manager System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="food_placement.html">Food Placement Reasoning System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
 </ul>
 
         </div>
@@ -57,7 +81,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Cogar Assignment</a>
+          <a href="index.html">First Assignment of COGAR</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -67,7 +91,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Order Verification System</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/YOUR-GITHUB-USERNAME/Assignment_Cogar/blob/main/docs/source/order_verification.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Rubin-unige/Assignment_Cogar/blob/main/docs/source/order_verification.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -77,106 +101,372 @@
              
   <section id="order-verification-system">
 <h1>Order Verification System<a class="headerlink" href="#order-verification-system" title="Permalink to this heading"></a></h1>
-<p>The <strong>OrderVerificationSystem</strong> is a critical subsystem that verifies customer orders using a series of steps involving communication with various services like the speaker and microphone. It consists of three key components: <strong>AnnounceOrder</strong>, <strong>ListenToCustomer</strong>, and <strong>DecisionHandler</strong>. Each component has a specific role, and their interaction ensures seamless verification of the customer’s order.</p>
-<img alt="Architecture Component Diagram" class="align-center" src="../static/architecture_diagram.png" />
-<section id="announceorder-component">
-<h2>AnnounceOrder Component<a class="headerlink" href="#announceorder-component" title="Permalink to this heading"></a></h2>
-<p>The <strong>AnnounceOrder</strong> component is responsible for announcing the order to the customer for confirmation.</p>
-<p><strong>Interface</strong>:
-- <strong>Input</strong>: A <cite>SpeakerRequest</cite> message containing the dish name to be announced.
-- <strong>Output</strong>: A <cite>SpeakerResponse</cite> message indicating whether the announcement was successful.</p>
-<p><strong>Communication Mechanism</strong>:
-- <strong>Service Interface</strong>: The component interacts with the <cite>/speaker</cite> service to communicate the order.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Service</strong>: <cite>/speaker</cite></p></li>
-<li><p><strong>Service Type</strong>: <cite>Speaker</cite> (Request: <cite>SpeakerRequest</cite>, Response: <cite>SpeakerResponse</cite>)</p></li>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#system-overview" id="id8">1. System Overview</a></p></li>
+<li><p><a class="reference internal" href="#core-components" id="id9">2. Core Components</a></p></li>
+<li><p><a class="reference internal" href="#system-integration" id="id10">3. System Integration</a></p></li>
+<li><p><a class="reference internal" href="#behavioral-diagram" id="id11">4. Behavioral Diagram</a></p></li>
 </ul>
-</div></blockquote>
-<p><strong>Interface Type</strong>:
-- <strong>Stateless</strong>: It does not retain state between requests; each interaction is independent.
-- <strong>Service-based</strong>: Communicates with the speaker service to generate a spoken announcement.
-- <strong>Strongly-typed</strong>: The communication is based on well-defined ROS message types (<cite>SpeakerRequest</cite> and <cite>SpeakerResponse</cite>).</p>
-<p><strong>Role in Architecture</strong>:
-- The <strong>AnnounceOrder</strong> component plays a crucial role in confirming the order with the customer by vocalizing the dish name and asking for confirmation. It relies on the <cite>/speaker</cite> service to provide the necessary feedback.</p>
-</section>
-<section id="listentocustomer-component">
-<h2>ListenToCustomer Component<a class="headerlink" href="#listentocustomer-component" title="Permalink to this heading"></a></h2>
-<p>The <strong>ListenToCustomer</strong> component captures the customer’s verbal response to verify if the order is correct.</p>
-<p><strong>Interface</strong>:
-- <strong>Input</strong>: The component listens for the customer’s response through the microphone.
-- <strong>Output</strong>: A <cite>String</cite> message containing the customer’s response, such as “yes”, “no”, or “correct”.</p>
-<p><strong>Communication Mechanism</strong>:
-- <strong>Service Interface</strong>: The component interacts with the <cite>/microphone</cite> service to capture the customer’s verbal feedback.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Service</strong>: <cite>/microphone</cite></p></li>
-<li><p><strong>Service Type</strong>: <cite>Microphone</cite> (Request: <cite>MicrophoneRequest</cite>, Response: <cite>MicrophoneResponse</cite>)</p></li>
+</nav>
+<section id="system-overview">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">1. System Overview</a><a class="headerlink" href="#system-overview" title="Permalink to this heading"></a></h2>
+<p>The Order Verification System ensures accurate order fulfillment through voice-based customer confirmation. Its responsibilities include:</p>
+<ul class="simple">
+<li><p><strong>Dish Announcement</strong>: Communicates order details to the customer via speech.</p></li>
+<li><p><strong>Response Processing</strong>: Captures and analyzes verbal confirmation or rejection.</p></li>
+<li><p><strong>Decision Making</strong>: Determines verification results based on user input.</p></li>
+<li><p><strong>Status Reporting</strong>: Updates the system on the current verification state, including escalation flags.</p></li>
 </ul>
-</div></blockquote>
-<p><strong>Interface Type</strong>:
-- <strong>Stateless</strong>: This component is stateless and performs its task of capturing a response without maintaining any internal state.
-- <strong>Service-based</strong>: It uses a service-based communication model to obtain customer feedback.
-- <strong>Strongly-typed</strong>: It works with the predefined ROS message type (<cite>MicrophoneResponse</cite>), which returns a string response.</p>
-<p><strong>Role in Architecture</strong>:
-- The <strong>ListenToCustomer</strong> component ensures that the customer’s response is captured accurately for verification. It relies on the <cite>/microphone</cite> service to gather this feedback and enable order verification.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/order_verification.png"><img alt="Order Verification System Architecture" src="_images/order_verification.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 5 :</strong> Order Verification System Architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="decisionhandler-component">
-<h2>DecisionHandler Component<a class="headerlink" href="#decisionhandler-component" title="Permalink to this heading"></a></h2>
-<p>The <strong>DecisionHandler</strong> component evaluates the customer’s response and determines the appropriate order verification status. It manages retry logic in case of invalid or ambiguous responses.</p>
-<p><strong>Interface</strong>:
-- <strong>Input</strong>: Receives the <cite>dish_name</cite>, <cite>response</cite>, and <cite>robot_id</cite> to assess the customer’s confirmation and make a final decision.
-- <strong>Output</strong>: Publishes the verification result to the <cite>/order_status</cite> topic, indicating whether the order is confirmed, rejected, or requires attention.</p>
-<p><strong>Communication Mechanism</strong>:
-- <strong>Topic Interface</strong>: The component publishes the order status to the <cite>/order_status</cite> topic for external systems to track.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Topic</strong>: <cite>/order_status</cite></p></li>
-<li><p><strong>Message Type</strong>: <cite>OrderStatus</cite></p></li>
+<section id="core-components">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">2. Core Components</a><a class="headerlink" href="#core-components" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Announce Order</strong></dt><dd><ul class="simple">
+<li><p>Converts order details into natural language announcements.</p></li>
+<li><p>Interfaces with the speaker system.</p></li>
+<li><p>Includes retry mechanism on speech failure.</p></li>
 </ul>
-</div></blockquote>
-<p><strong>Interface Type</strong>:
-- <strong>Stateful</strong>: It maintains internal state, such as the retry count, order verification status, and decision outcomes.
-- <strong>Topic-based</strong>: Publishes results to the <cite>/order_status</cite> topic, allowing other components to monitor the order status.
-- <strong>Strongly-typed</strong>: Interacts with predefined ROS message types (<cite>OrderStatus</cite>), ensuring consistent communication.</p>
-<p><strong>Role in Architecture</strong>:
-- The <strong>DecisionHandler</strong> component evaluates the customer’s response to determine the correctness of the order. It handles retries and ensures that orders are processed correctly. It communicates the final status of the order through the <cite>/order_status</cite> topic, without direct interaction with the microphone or speaker services.</p>
-</section>
-<section id="summary-of-component-interfaces">
-<h2>Summary of Component Interfaces<a class="headerlink" href="#summary-of-component-interfaces" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Summary of Component Interfaces</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Listen To Customer</strong></dt><dd><ul class="simple">
+<li><p>Uses the microphone service to capture audio input.</p></li>
+<li><p>Waits for a valid response or times out gracefully.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Decision Handler</strong></dt><dd><ul class="simple">
+<li><p>Interprets customer response.</p></li>
+<li><p>Determines outcome: <em>Verified</em> or <em>Rejected</em>.</p></li>
+<li><p>Flags rejections or timeouts for staff attention.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<section id="announce-order">
+<h3>1. Announce Order<a class="headerlink" href="#announce-order" title="Permalink to this heading"></a></h3>
+<dl>
+<dt><strong>Function</strong>:</dt><dd><ul class="simple">
+<li><p>Announces the dish name using the speaker system.</p></li>
+<li><p>Retries up to 3 times if the speaker service fails.</p></li>
+<li><p>Formats messages for clarity.</p></li>
+</ul>
+</dd>
+<dt><strong>Interfaces</strong>:</dt><dd><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">AnnounceOrder Communication</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 30.0%" />
-<col style="width: 20.0%" />
+<col style="width: 9.1%" />
+<col style="width: 18.2%" />
+<col style="width: 13.6%" />
+<col style="width: 18.2%" />
+<col style="width: 22.7%" />
+<col style="width: 9.1%" />
+<col style="width: 9.1%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
-<th class="head"><p><strong>Interface Type</strong></p></th>
-<th class="head"><p><strong>Communication Mechanism</strong></p></th>
-<th class="head"><p><strong>Message Types</strong></p></th>
+<tr class="row-odd"><th class="head"><p>Direction</p></th>
+<th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>AnnounceOrder</p></td>
-<td><p>Stateless, Service-based</p></td>
-<td><p>Communicates with the <cite>/speaker</cite> service</p></td>
-<td><p><cite>SpeakerRequest</cite>, <cite>SpeakerResponse</cite></p></td>
+<tr class="row-even"><td><p>Output</p></td>
+<td><p>/speaker_service</p></td>
+<td><p>ROS Service</p></td>
+<td><p>Speaker.srv</p></td>
+<td><p>Sends verbal announcements</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>ListenToCustomer</p></td>
-<td><p>Stateless, Service-based</p></td>
-<td><p>Communicates with the <cite>/microphone</cite> service</p></td>
-<td><p><cite>MicrophoneRequest</cite>, <cite>MicrophoneResponse</cite></p></td>
-</tr>
-<tr class="row-even"><td><p>DecisionHandler</p></td>
-<td><p>Stateful, Topic-based</p></td>
-<td><p>Publishes to the <cite>/order_status</cite> topic</p></td>
-<td><p><cite>OrderStatus</cite></p></td>
+<tr class="row-odd"><td><p>Input</p></td>
+<td><p>Internal API</p></td>
+<td><p>Method Call</p></td>
+<td><p>DishInfo</p></td>
+<td><p>Receives order details</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
 </tr>
 </tbody>
 </table>
+</dd>
+</dl>
+</section>
+<section id="listen-to-customer">
+<h3>2. Listen To Customer<a class="headerlink" href="#listen-to-customer" title="Permalink to this heading"></a></h3>
+<dl>
+<dt><strong>Function</strong>:</dt><dd><ul class="simple">
+<li><p>Captures verbal response using the <cite>/microphone</cite> service.</p></li>
+<li><p>Waits up to 5 seconds for a valid input.</p></li>
+<li><p>Handles microphone service unavailability gracefully.</p></li>
+</ul>
+</dd>
+<dt><strong>Interfaces</strong>:</dt><dd><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">ListenToCustomer Communication</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9.1%" />
+<col style="width: 18.2%" />
+<col style="width: 13.6%" />
+<col style="width: 18.2%" />
+<col style="width: 22.7%" />
+<col style="width: 9.1%" />
+<col style="width: 9.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Direction</p></th>
+<th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>/microphone</p></td>
+<td><p>ROS Service</p></td>
+<td><p>AudioStream</p></td>
+<td><p>Receives customer audio</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Internal API</p></td>
+<td><p>Method Call</p></td>
+<td><p>string</p></td>
+<td><p>Provides cleaned response</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</section>
+<section id="decision-handler">
+<h3>3. Decision Handler<a class="headerlink" href="#decision-handler" title="Permalink to this heading"></a></h3>
+<dl>
+<dt><strong>Function</strong>:</dt><dd><ul class="simple">
+<li><p>Parses customer input to determine whether the order is confirmed or rejected.</p></li>
+<li><p>Recognizes keywords like “yes”, “correct”, or “right” as confirmation.</p></li>
+<li><p>Flags rejection or no response for staff attention.</p></li>
+<li><p>Publishes verification status on a shared topic.</p></li>
+</ul>
+</dd>
+<dt><strong>Interfaces</strong>:</dt><dd><table class="docutils align-default" id="id4">
+<caption><span class="caption-text">DecisionHandler Communication</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9.1%" />
+<col style="width: 18.2%" />
+<col style="width: 13.6%" />
+<col style="width: 18.2%" />
+<col style="width: 22.7%" />
+<col style="width: 9.1%" />
+<col style="width: 9.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Direction</p></th>
+<th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output</p></td>
+<td><p>/order_status</p></td>
+<td><p>ROS Topic</p></td>
+<td><p>OrderStatus.msg</p></td>
+<td><p>Publishes verification outcome</p></td>
+<td><p>Stateful</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</section>
+</section>
+<section id="system-integration">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">3. System Integration</a><a class="headerlink" href="#system-integration" title="Permalink to this heading"></a></h2>
+<p>The Order Verification System integrates with several external systems, which is essential for its proper functioning. The communication points with these external systems are detailed below.</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">External System Communication</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15.8%" />
+<col style="width: 10.5%" />
+<col style="width: 15.8%" />
+<col style="width: 15.8%" />
+<col style="width: 21.1%" />
+<col style="width: 10.5%" />
+<col style="width: 10.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p>Direction</p></th>
+<th class="head"><p>Interface</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Data Format</p></th>
+<th class="head"><p>Stateless/Stateful</p></th>
+<th class="head"><p>Strongly Typed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Task Assigner</p></td>
+<td><p>Input</p></td>
+<td><p>/verify_order</p></td>
+<td><p>ROS Service</p></td>
+<td><p>robot_id, dish_name</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Speaker System</p></td>
+<td><p>Output</p></td>
+<td><p>/speaker</p></td>
+<td><p>ROS Service</p></td>
+<td><p>text_to_speak</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Microphone</p></td>
+<td><p>Input</p></td>
+<td><p>/microphone</p></td>
+<td><p>ROS Service</p></td>
+<td><p>raw_audio</p></td>
+<td><p>Stateless</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Order Status</p></td>
+<td><p>Output</p></td>
+<td><p>/order_status</p></td>
+<td><p>ROS Topic</p></td>
+<td><p>OrderStatus.msg</p></td>
+<td><p>Stateful</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<section id="design-patterns">
+<h3>Design Patterns<a class="headerlink" href="#design-patterns" title="Permalink to this heading"></a></h3>
+<p>The Order Verification System incorporates several design patterns to ensure clarity, modularity, and robustness:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>State Pattern</strong></dt><dd><p>The verification process transitions through well-defined states such as <em>verifying</em>, <em>verified</em>, and <em>rejected</em>. This pattern is used implicitly within the <code class="docutils literal notranslate"><span class="pre">DecisionHandler</span></code> to manage the verification lifecycle and ensure consistent status updates across retries and failures.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Observer Pattern</strong></dt><dd><p>Once a decision is made, the system publishes the result to the <code class="docutils literal notranslate"><span class="pre">/order_status</span></code> topic. Other systems — like robot_manager — can subscribe and respond to these updates. This decouples verification from downstream processes, allowing clean event-driven communication.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Facade Pattern</strong></dt><dd><p>The interfaces to the microphone and speaker systems are encapsulated behind simple service call wrappers (<code class="docutils literal notranslate"><span class="pre">ListenToCustomer</span></code> and <code class="docutils literal notranslate"><span class="pre">AnnounceOrder</span></code>). This hides the low-level details and allows the rest of the system to interact with audio hardware through a unified, simplified interface.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section id="behavioral-diagram">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">4. Behavioral Diagram</a><a class="headerlink" href="#behavioral-diagram" title="Permalink to this heading"></a></h2>
+<section id="sequence-diagram">
+<h3>1. Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permalink to this heading"></a></h3>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/order_verification_sequence.png"><img alt="Sequence diagram of Order Verification" src="_images/order_verification_sequence.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 6 :</strong> Order Verification System Sequence Diagram</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The sequence diagram above illustrates the interaction flow of the Order Verification System:</p>
+<ol class="arabic simple">
+<li><p>The <strong>RobotManager</strong> initiates the process by sending a verification request with the <cite>robot_id</cite> and <cite>dish_name</cite>.</p></li>
+<li><p>The <strong>OrderVerificationSystem</strong> attempts to announce the order to the customer using the <strong>AnnounceOrder</strong> component. If the announcement fails (e.g., due to speaker issues), the system retries until successful.</p></li>
+<li><p>Once the announcement is made, the system invokes <strong>ListenToCustomer</strong>, which listens for the customer’s verbal confirmation or rejection through a microphone.</p></li>
+<li><p>The customer’s response (e.g., “yes”, “no”, or silence) is interpreted and returned to the main system.</p></li>
+<li><dl class="simple">
+<dt>The <strong>DecisionHandler</strong> processes the response:</dt><dd><ul class="simple">
+<li><p>If the response is empty or indicates rejection, it sets the order status to <em>rejected</em> and flags for staff attention.</p></li>
+<li><p>If the response is positive (e.g., “yes”, “correct”), it marks the order as <em>verified</em> without staff involvement.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Finally, a response is sent back to the <strong>RobotManager</strong> with the outcome, and the status is published on the <cite>/order_status</cite> topic for downstream systems to act upon.</p></li>
+</ol>
+<p>This flow ensures a robust verification loop that can handle failures gracefully and escalate to human staff when needed.</p>
+</section>
+<section id="statemachine-diagram">
+<h3>2. StateMachine Diagram<a class="headerlink" href="#statemachine-diagram" title="Permalink to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/order_verification_state.png"><img alt="State machine of Order Verification" src="_images/order_verification_state.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 7 :</strong> Order Verification System StateMachine Diagram</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The state machine diagram illustrates the internal behavior of the Order Verification System from request to result publication.</p>
+<ul>
+<li><p><strong>Idle</strong>: The default state of the system, waiting for a new verification request.</p></li>
+<li><p><strong>Announcing</strong>: Triggered by a <cite>VerifyOrder</cite> request. The system attempts to verbally communicate the dish name to the customer.</p>
+<ul class="simple">
+<li><p>On failure (e.g., speaker issue), the announcement is retried (up to a configured number of attempts).</p></li>
+<li><p>On success, it transitions to the next phase.</p></li>
+</ul>
+</li>
+<li><p><strong>Listening</strong>: The system activates the microphone and waits for a response from the customer.</p>
+<ul class="simple">
+<li><p>A valid response transitions to <em>DecisionMaking</em>.</p></li>
+<li><p>Silence or microphone failure triggers the <em>Failure</em> path.</p></li>
+</ul>
+</li>
+<li><p><strong>Deciding</strong>: This phase evaluates the customer’s response.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt><strong>DecisionMaking</strong>:</dt><dd><ul>
+<li><p>If keywords like “yes” or “correct” are detected, the system moves to <em>Verified</em>.</p></li>
+<li><p>If “no” or an incorrect phrase is detected, it transitions to <em>Rejected</em>. In this case, the staff notification flag is set to <cite>true</cite> so the robot can request assistance.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Failure</strong>:</dt><dd><ul>
+<li><p>If no response is received within the timeout window, the result is treated as <em>Rejected</em>, and staff are notified automatically.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Publish Order Status</strong>: The system publishes the outcome (<cite>verified</cite> or <cite>rejected</cite>) to <cite>/order_status</cite>, and returns the <cite>VerifyOrderResponse</cite> to the requesting component (usually the robot manager).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The system then transitions back to <em>Idle</em>, ready to handle the next verification.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -184,7 +474,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="COGAR Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="orchestration.html" class="btn btn-neutral float-left" title="Orchestration System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot_manager.html" class="btn btn-neutral float-right" title="Robot Manager System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
