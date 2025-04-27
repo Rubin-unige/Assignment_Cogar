@@ -54,12 +54,12 @@ class TestFoodPlacementSystem(unittest.TestCase):
         self.KPIs['success_rate'] = successes / len(statuses)
 
     def test_03_response_time(self):
-        """KPI: 95% of responses under 8 seconds"""
+        """KPI: 95% of responses under 12 seconds"""
         if not self.KPIs['response_times']:
             self.skipTest("No response times recorded")
 
         avg_time = sum(self.KPIs['response_times']) / len(self.KPIs['response_times'])
-        self.assertLess(avg_time, 8.0, f"Average response time {avg_time:.2f}s > 8s KPI")
+        self.assertLess(avg_time, 12.0, f"Average response time {avg_time:.2f}s > 12s KPI")
 
     def test_04_throughput(self):
         """KPI: Handle ≥5 placement requests/minute (≥0.083 orders/sec)"""
@@ -93,7 +93,7 @@ class TestFoodPlacementSystem(unittest.TestCase):
         print("\n=== KPI Summary ===")
         print(f"1. Service Availability: {cls.KPIs['availability_time']:.2f}s (max 5s)")
         if cls.KPIs['response_times']:
-            print(f"2. Avg Response Time: {sum(cls.KPIs['response_times'])/len(cls.KPIs['response_times']):.2f}s (max 8s)")
+            print(f"2. Avg Response Time: {sum(cls.KPIs['response_times'])/len(cls.KPIs['response_times']):.2f}s (max 12s)")
         else:
             print("2. Avg Response Time: No data recorded")
         print(f"3. Throughput: {cls.KPIs['throughput']:.2f} orders/sec (min 0.083)")

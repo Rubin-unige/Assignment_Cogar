@@ -70,4 +70,4 @@ Launch the system components in separate terminals in the following order:
 .. code-block:: bash
     :caption: Terminal 2 - Food Placement Reasoning System Test
 
-    rostest assignment_cogar test_food_placement_system.test
+    rostest assignment_cogar test_food_placement.test

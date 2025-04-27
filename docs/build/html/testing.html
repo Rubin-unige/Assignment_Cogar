@@ -72,7 +72,27 @@
 <li class="toctree-l3"><a class="reference internal" href="#conclusion">5. Conclusion</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#food-placement-reasoning-system-test">2. Food Placement Reasoning System Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#food-placement-reasoning-system-test">2. Food Placement Reasoning System Test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2. Test Implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.1 Test Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.2 Test Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3. Test Cases (KPI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">3.1 Functional Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">3.2 Performance Metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">3.3 Results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">4. Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">4.1 Strengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">4.2 Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">5. Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="implementation.html">Implementation</a></li>
@@ -106,12 +126,12 @@
 <h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading"></a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#order-verification-system-test" id="id6">1. Order Verification System Test</a></p></li>
-<li><p><a class="reference internal" href="#food-placement-reasoning-system-test" id="id7">2. Food Placement Reasoning System Test</a></p></li>
+<li><p><a class="reference internal" href="#order-verification-system-test" id="id23">1. Order Verification System Test</a></p></li>
+<li><p><a class="reference internal" href="#food-placement-reasoning-system-test" id="id24">2. Food Placement Reasoning System Test</a></p></li>
 </ul>
 </nav>
 <section id="order-verification-system-test">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">1. Order Verification System Test</a><a class="headerlink" href="#order-verification-system-test" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">1. Order Verification System Test</a><a class="headerlink" href="#order-verification-system-test" title="Permalink to this heading"></a></h2>
 <section id="overview">
 <h3>1. Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h3>
 <p>Validates the ROS-based order verification service for sushi restaurant robots, ensuring:</p>
@@ -126,8 +146,8 @@
 <h3>2. Test Implementation<a class="headerlink" href="#test-implementation" title="Permalink to this heading"></a></h3>
 <section id="test-configuration">
 <h4>2.1 Test Configuration<a class="headerlink" href="#test-configuration" title="Permalink to this heading"></a></h4>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Test Environment</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Test Environment</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -159,8 +179,8 @@
 <video controls width="700" style="display:block;margin:0 auto">
     <source src="_static/order_test.mp4" type="video/mp4">
     Video: Test execution demonstrating verification and rejection cases
-</video><div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Test Command</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+</video><div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Test Command</span><a class="headerlink" href="#id14" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_order_verification_system.test
 </pre></div>
 </div>
@@ -171,8 +191,8 @@
 <h3>3. Test Cases (KPI)<a class="headerlink" href="#test-cases-kpi" title="Permalink to this heading"></a></h3>
 <section id="functional-validation">
 <h4>3.1 Functional Validation<a class="headerlink" href="#functional-validation" title="Permalink to this heading"></a></h4>
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Functional Test Cases</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Functional Test Cases</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 40.0%" />
@@ -202,8 +222,8 @@
 </section>
 <section id="performance-metrics">
 <h4>3.2 Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permalink to this heading"></a></h4>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Performance Benchmarks</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">Performance Benchmarks</span><a class="headerlink" href="#id16" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 40.0%" />
@@ -229,8 +249,8 @@
 </section>
 <section id="results">
 <h4>3.3 Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h4>
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">KPI SUMMARY</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">KPI SUMMARY</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 18.8%" />
 <col style="width: 12.5%" />
@@ -315,7 +335,207 @@
 </section>
 </section>
 <section id="food-placement-reasoning-system-test">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">2. Food Placement Reasoning System Test</a><a class="headerlink" href="#food-placement-reasoning-system-test" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">2. Food Placement Reasoning System Test</a><a class="headerlink" href="#food-placement-reasoning-system-test" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h3>1. Overview<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>Validates the ROS-based food placement reasoning service for sushi restaurant robots, ensuring:</p>
+<ul class="simple">
+<li><p>Service availability and responsiveness</p></li>
+<li><p>Correct behavior for different table statuses</p></li>
+<li><p>Performance under operational conditions</p></li>
+<li><p>Robust error handling when given invalid inputs</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>2. Test Implementation<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<section id="id3">
+<h4>2.1 Test Configuration<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id18">
+<caption><span class="caption-text">Test Environment</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Test Type</p></td>
+<td><p>Component Integration Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>System Under Test</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/robot{i}/food_placer_service</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Mock Services</p></td>
+<td><p>Arm Motion Service</p></td>
+</tr>
+<tr class="row-odd"><td><p>Test Framework</p></td>
+<td><p>rostest + unittest</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h4>2.2 Test Execution<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<p>This video demonstrates the testing of food placement logic based on different table statuses.</p>
+<video controls width="700" style="display:block;margin:0 auto">
+    <source src="_static/food_test.mp4" type="video/mp4">
+    Video: Test execution demonstrating correct placement and error handling
+</video><div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Test Command</span><a class="headerlink" href="#id19" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostest<span class="w"> </span>assignment_cogar<span class="w"> </span>test_food_placement.test
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h3>3. Test Cases (KPI)<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<section id="id6">
+<h4>3.1 Functional Validation<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id20">
+<caption><span class="caption-text">Functional Test Cases</span><a class="headerlink" href="#id20" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 40.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Case</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Validation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Service Availability</p></td>
+<td><p>Verify service startup time</p></td>
+<td><p>≤5 seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal Operation</p></td>
+<td><p>Test service behavior for EMPTY, PARTIALLY_OCCUPIED, and CLUTTERED tables</p></td>
+<td><p>Successful placement response</p></td>
+</tr>
+<tr class="row-even"><td><p>Error Handling</p></td>
+<td><p>Verify behavior on unknown table status</p></td>
+<td><p>Graceful failure without crashing</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h4>3.2 Performance Metrics<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-text">Performance Benchmarks</span><a class="headerlink" href="#id21" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 40.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Case</p></th>
+<th class="head"><p>Measurement</p></th>
+<th class="head"><p>Target</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response Time</p></td>
+<td><p>Average service latency</p></td>
+<td><p>≤12 seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Throughput</p></td>
+<td><p>Placements processed per second</p></td>
+<td><p>≥0.083 ops/s</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h4>3.3 Results<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default" id="id22">
+<caption><span class="caption-text">KPI SUMMARY</span><a class="headerlink" href="#id22" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 18.8%" />
+<col style="width: 12.5%" />
+<col style="width: 18.8%" />
+<col style="width: 18.8%" />
+<col style="width: 31.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Measurement</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Service Availability</p></td>
+<td><p>~1.8s</p></td>
+<td><p>≤5s</p></td>
+<td><p>PASS</p></td>
+<td><p>From test_01_service_availability</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal Operation</p></td>
+<td><p>Success Rate 100%</p></td>
+<td><p>N/A</p></td>
+<td><p>PASS</p></td>
+<td><p>All standard cases handled correctly</p></td>
+</tr>
+<tr class="row-even"><td><p>Response Time</p></td>
+<td><p>~10.37s</p></td>
+<td><p>≤12s</p></td>
+<td><p>PASS</p></td>
+<td><p>Average from test_03_response_time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Throughput</p></td>
+<td><p>~0.11 ops/s</p></td>
+<td><p>≥0.083 ops/s</p></td>
+<td><p>PASS</p></td>
+<td><p>From test_04_throughput</p></td>
+</tr>
+<tr class="row-even"><td><p>Error Handling</p></td>
+<td><p>Responded gracefully</p></td>
+<td><p>N/A</p></td>
+<td><p>PASS</p></td>
+<td><p>Handled UNKNOWN_STATUS properly</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Slight variations in timing can occur due to ROS service queueing and simulated robot behavior delays.</p>
+</div>
+</section>
+</section>
+<section id="id9">
+<h3>4. Analysis<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<section id="id10">
+<h4>4.1 Strengths<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Full functional coverage (all table statuses tested)</p></li>
+<li><p>Response time within acceptable limits after KPI adjustment</p></li>
+<li><p>Robust error handling for invalid inputs</p></li>
+</ul>
+</section>
+<section id="id11">
+<h4>4.2 Limitations<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Higher average latency (~10s) compared to ideal performance goals</p></li>
+<li><p>Service currently handles requests serially, limiting scalability for high-demand scenarios</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h3>5. Conclusion<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
+<p>The system demonstrates:</p>
+<ul class="simple">
+<li><p>Reliable food placement reasoning based on table status</p></li>
+<li><p>Compliance with adjusted performance KPIs</p></li>
+<li><p>Good fault tolerance under invalid input conditions</p></li>
+</ul>
+</section>
 </section>
 </section>
 
