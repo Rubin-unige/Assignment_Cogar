@@ -1,8 +1,8 @@
 <launch>
-  <node name="rgb" pkg="rosbag" type="play" args="$(find sushi_bot)/bags/rgb_raw.bag" />
-  <node name="depth" pkg="rosbag" type="play" args="$(find sushi_bot)/bags/depth_raw.bag" />
-  <node name="lidar" pkg="rosbag" type="play" args="$(find sushi_bot)/bags/scan_lidar.bag" />
-  <node name="sonar" pkg="rosbag" type="play" args="$(find sushi_bot)/bags/sonar.bag" />
-  <node name="force" pkg="rosbag" type="play" args="$(find sushi_bot)/bags/force_sensor.bag" />
+  <node name="rgb" pkg="rosbag" type="play" args="$(find assignment_cogar)/bags/rgb_raw.bag" />
+  <node name="depth" pkg="rosbag" type="play" args="$(find assignment_cogar)/bags/depth_raw.bag" />
+  <node name="lidar" pkg="rosbag" type="play" args="$(find assignment_cogar)/bags/scan_lidar.bag" />
+  <node name="sonar" pkg="rosbag" type="play" args="$(find assignment_cogar)/bags/sonar.bag" />
+  <node name="force" pkg="rosbag" type="play" args="$(find assignment_cogar)/bags/force_sensor.bag" />
 </launch>
 
