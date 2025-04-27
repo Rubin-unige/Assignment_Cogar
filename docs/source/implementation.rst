@@ -14,11 +14,19 @@ Implementation
 **Initial Setup:**
 
 .. code-block:: bash
-   :caption: Terminal - Initial Setup
+   :caption: Terminal - Clone the repository
 
    git clone https://github.com/Rubin-unige/Assignment_Cogar.git
    cd Assignment_Cogar
+
+.. code-block:: bash
+   :caption: Terminal - Build the workspace
+
    catkin_make
+
+.. code-block:: bash
+   :caption: Terminal - Source the workspace
+
    source devel/setup.bash
 
 2. Launching the System

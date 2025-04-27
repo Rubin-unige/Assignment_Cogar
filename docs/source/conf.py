@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'First Assignment of COGAR'
+project = 'First Assignment of CogAR'
 copyright = '2025, Sarvenaz Ashoori | Rubin Khadka Chhetri'
 author = 'Sarvenaz Ashoori | Rubin Khadka Chhetri'
 release = '1.0'

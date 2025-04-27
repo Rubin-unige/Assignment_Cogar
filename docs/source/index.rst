@@ -1,7 +1,8 @@
-First Assignment of Cognitive Architecture for Robotics (COGAR)
-===============================================================
+Cognitive Architectures for Robotics (CogAR)
+=============================================
 
-**Autonomous Waiters in a Sushi Restaurant** 
+Autonomous Waiters in a Sushi Restaurant
+-----------------------------------------
 
 :Authors:   Rubin Khadka Chhetri | Sarvenaz Ashoori
 :Group:     B

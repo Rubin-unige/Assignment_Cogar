@@ -1,2 +1,0 @@
-set(sushi_bot_MESSAGE_FILES "/home/rubin/Assignment_Cogar/src/assignment_cogar/msg/Order.msg;/home/rubin/Assignment_Cogar/src/assignment_cogar/msg/RobotStatus.msg;/home/rubin/Assignment_Cogar/src/assignment_cogar/msg/OrderStatus.msg;/home/rubin/Assignment_Cogar/src/assignment_cogar/msg/TableStatus.msg")
-set(sushi_bot_SERVICE_FILES "/home/rubin/Assignment_Cogar/src/assignment_cogar/srv/VerifyOrder.srv;/home/rubin/Assignment_Cogar/src/assignment_cogar/srv/Microphone.srv")

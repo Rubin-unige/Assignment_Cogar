@@ -1,8 +1,0 @@
-prefix=/home/rubin/Assignment_Cogar/devel
-
-Name: assignment_cogar
-Description: Description of assignment_cogar
-Version: 0.0.0
-Cflags: -I/home/rubin/Assignment_Cogar/devel/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy std_msgs message_runtime
